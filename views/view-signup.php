@@ -16,10 +16,8 @@
 
                 <label for="nom_entreprise">Nom de l'entreprise</label>
 
-                <input type="text" id="nom_entreprise" name="nom_entreprise" value="
-                <?=
-                    isset($_POST['nom_entreprise']) ? htmlspecialchars($_POST['nom_entreprise']) : ''
-                    ?>">
+                <input type="text" id="nom_entreprise" name="nom_entreprise" value="<?=
+                    isset($_POST['nom_entreprise']) ? htmlspecialchars($_POST['nom_entreprise']) : '' ?>">
 
                 <span class="error">
                     <?php
@@ -31,10 +29,8 @@
 
                 <label for="ville">Ville</label>
 
-                <input type="text" id="ville" name="ville" value="
-                <?=
-                    isset($_POST['ville']) ? htmlspecialchars($_POST['ville']) : ''
-                    ?>">
+                <input type="text" id="ville" name="ville" value="<?=
+                    isset($_POST['ville']) ? htmlspecialchars($_POST['ville']) : '' ?>">
 
                 <span class="error">
                     <?php
@@ -46,10 +42,8 @@
 
                 <label for="email_entreprise">Email</label>
 
-                <input type="email" id="email_entreprise" name="email_entreprise" value="
-                <?=
-                    isset($_POST['email_entreprise']) ? htmlspecialchars($_POST['email_entreprise']) : ''
-                    ?>">
+                <input type="email" id="email_entreprise" name="email_entreprise" value="<?=
+                    isset($_POST['email_entreprise']) ? htmlspecialchars($_POST['email_entreprise']) : '' ?>">
 
                 <span class="error">
                     <?php
@@ -62,8 +56,7 @@
                 <label for="mdp_email_entreprise">Mot de passe</label>
 
                 <input type="password" id="mdp_email_entreprise" name="mdp_email_entreprise" value="<?=
-                    isset($_POST['mdp_email_entreprise']) ? ($_POST['mdp_email_entreprise']) : ''
-                    ?>">
+                    isset($_POST['mdp_email_entreprise']) ? ($_POST['mdp_email_entreprise']) : '' ?>">
 
                 <span class="error">
                     <?php
@@ -76,8 +69,7 @@
                 <label for="verif_mdp_email_entreprise">Confimer le mot de passe </label>
 
                 <input type="password" id="verif_mdp_email_entreprise" name="verif_mdp_email_entreprise" value="<?=
-                    isset($_POST['verif_mdp_email_entreprise']) ? ($_POST['verif_mdp_email_entreprise']) : ''
-                    ?>">
+                    isset($_POST['verif_mdp_email_entreprise']) ? ($_POST['verif_mdp_email_entreprise']) : '' ?>">
 
                 <span class="error">
                     <?php
@@ -89,10 +81,8 @@
 
                 <label for="numero_de_siret">Numéro de siret</label>
 
-                <input type="text" id="numero_de_siret" name="numero_de_siret" value="
-                <?=
-                    isset($_POST['numero_de_siret']) ? htmlspecialchars($_POST['numero_de_siret']) : ''
-                    ?>">
+                <input type="text" id="numero_de_siret" name="numero_de_siret" value="<?=
+                    isset($_POST['numero_de_siret']) ? htmlspecialchars($_POST['numero_de_siret']) : '' ?>">
 
                 <span class="error">
                     <?php
@@ -104,10 +94,8 @@
 
                 <label for="adresse_entreprise">Adresse postale</label>
 
-                <input type="text" id="adresse_entreprise" name="adresse_entreprise" value="
-                <?=
-                    isset($_POST['adresse_entreprise']) ? htmlspecialchars($_POST['adresse_entreprise']) : ''
-                    ?>">
+                <input type="text" id="adresse_entreprise" name="adresse_entreprise" value="<?=
+                    isset($_POST['adresse_entreprise']) ? htmlspecialchars($_POST['adresse_entreprise']) : '' ?>">
 
                 <span class="error">
                     <?php
@@ -119,10 +107,9 @@
 
                 <label for="code_postal_entreprise">Code postale</label>
 
-                <input type="text" id="code_postal_entreprise" name="code_postal_entreprise" value="
-                <?=
-                    isset($_POST['code_postal_entreprise']) ? htmlspecialchars($_POST['code_postal_entreprise']) : ''
-                    ?>">
+                <input type="text" id="code_postal_entreprise" name="code_postal_entreprise"
+                    value="<?=
+                        isset($_POST['code_postal_entreprise']) ? htmlspecialchars($_POST['code_postal_entreprise']) : '' ?>">
 
                 <span class="error">
                     <?php
@@ -165,7 +152,7 @@
 
     <?php } else { ?>
 
-        <h2 class="">Félicitation Inscription validée <br> Veuillez vous connectez
+        <h2 class="">Félicitation inscription validée <br> Veuillez vous connectez
             <br><a href="#">Connexion</a>
         </h2>
 

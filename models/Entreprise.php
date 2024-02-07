@@ -13,7 +13,7 @@ class Entreprise
      * @param string $email_entreprise Adresse email de l'entreprise
      * @param string $adresse_entreprise Adresse postal de l'entreprise 
      * @param string $code_postal_entreprise Code postal de l'entreprise
-     * @param string $image_entreprise Image descriptive de l'entreprise 
+     * 
      * 
      * @return void 
      */
@@ -27,7 +27,7 @@ class Entreprise
         string $email_entreprise,
         string $adresse_entreprise,
         string $code_postal_entreprise,
-        string $image_entreprise,
+
 
     ) {
         try {
@@ -71,7 +71,7 @@ class Entreprise
 
             $query->bindValue(":cp_entreprise", htmlspecialchars($code_postal_entreprise), PDO::PARAM_STR);
 
-            $query->bindValue(":img_entreprise", $image_entreprise, PDO::PARAM_STR);
+            $query->bindValue(":img_entreprise", "defaut.jpg", PDO::PARAM_STR);
 
             $query = $query->execute();
 
