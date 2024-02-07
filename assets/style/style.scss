@@ -1,0 +1,16 @@
+.signin {
+    h2 {
+        font-size: 2rem;
+    }
+
+    .form_inscription {
+
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: fit-content;
+            margin: 0 auto;
+        }
+    }
+}

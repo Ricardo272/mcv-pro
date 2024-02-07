@@ -1,0 +1,10 @@
+.signin h2 {
+  font-size: 2rem;
+}
+.signin .form_inscription form {
+  display: flex;
+  flex-direction: column;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}/*# sourceMappingURL=style.css.map */
