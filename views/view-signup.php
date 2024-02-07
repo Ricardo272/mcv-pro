@@ -56,7 +56,7 @@
                 <label for="mdp_email_entreprise">Mot de passe</label>
 
                 <input type="password" id="mdp_email_entreprise" name="mdp_email_entreprise" value="<?=
-                    isset($_POST['mdp_email_entreprise']) ? ($_POST['mdp_email_entreprise']) : '' ?>">
+                    isset($_POST['mdp_email_entreprise']) ? htmlspecialchars($_POST['mdp_email_entreprise']) : '' ?>">
 
                 <span class="error">
                     <?php
@@ -66,15 +66,15 @@
                     ?>
                 </span>
 
-                <label for="verif_mdp_email_entreprise">Confimer le mot de passe </label>
+                <label for="verif_mdp">Confirmer le mot de passe </label>
 
-                <input type="password" id="verif_mdp_email_entreprise" name="verif_mdp_email_entreprise" value="<?=
-                    isset($_POST['verif_mdp_email_entreprise']) ? ($_POST['verif_mdp_email_entreprise']) : '' ?>">
+                <input type="password" id="verif_mdp" name="verif_mdp" value="<?=
+                    isset($_POST['verif_mdp']) ? htmlspecialchars($_POST['verif_mdp']) : '' ?>">
 
                 <span class="error">
                     <?php
-                    if (isset($error['verif_mdp_email_entreprise'])) {
-                        echo $error['verif_mdp_email_entreprise'];
+                    if (isset($error['verif_mdp'])) {
+                        echo $error['verif_mdp'];
                     }
                     ?>
                 </span>
@@ -123,11 +123,11 @@
                     <a href="#">
                         Conditions général d'utilisation
                     </a>
-                    <input class="cache" name="cgu" type="checkbox" value="Accepter les CGU ?" required>
+                    <input class="cache" name="cgu" type="checkbox" required value="Accepter les CGU ?">
                 </label>
                 <span class="error">
-                    <?php if (isset($errors['cgu'])) {
-                        echo $errors['cgu'];
+                    <?php if (isset($error['cgu'])) {
+                        echo $error['cgu'];
                     } ?>
                 </span>
 
@@ -152,7 +152,8 @@
 
     <?php } else { ?>
 
-        <h2 class="">Félicitation inscription validée <br> Veuillez vous connectez
+        <h2 class="">Félicitation inscription validée <br>
+            <hr> Veuillez vous connectez
             <br><a href="#">Connexion</a>
         </h2>
 

@@ -6,7 +6,6 @@ require_once "../models/Entreprise.php";
 
 $showform = true;
 $regex = "/^[a-zA-ZÀ-ÿ\_\-\d ]+$/";
-var_dump($_POST);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $error = [];
 
@@ -28,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $error["email_entreprise"] = "Le nom est invalide.";
     }
 
-    if (empty($_POST["numero_de_siret"] || strlen($numero_de_siret) == 14)) {
+    if (empty($_POST["numero_de_siret"])) {
         $error["numero_de_siret"] = "Champs obligatoire.";
     } else if (!preg_match($regex, $_POST["numero_de_siret"])) {
         $error["numero_de_siret"] = "Le nom est invalide.";
@@ -40,22 +39,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $error["adresse_entreprise"] = "Le nom est invalide.";
     }
 
-    if (empty($_POST["code_postal_entreprise"] || strlen($code_postal_entreprise) == 5)) {
+    if (empty($_POST["code_postal_entreprise"])) {
         $error["code_postal_entreprise"] = "Champs obligatoire.";
     } else if (!preg_match($regex, $_POST["code_postal_entreprise"])) {
         $error["code_postal_entreprise"] = "Le nom est invalide.";
     }
 
     $mdp_email_entreprise = $_POST["mdp_email_entreprise"];
-    $verif_mdp_email_entreprise = $_POST["verif_mdp_email_entreprise"];
-    if (empty($mdp_email_entreprise) || strlen($mdp_email_entreprise) < 8 || $mdp_email_entreprise !== $verif_mdp_email_entreprise) {
-        $errors['mdp_email_entreprise'] = "Le mot de passe doit comporter au moins 8 caractères et correspondre.";
+    $verif_mdp = $_POST["verif_mdp"];
+    if (empty($mdp_email_entreprise) || strlen($mdp_email_entreprise) < 8 || $mdp_email_entreprise !== $verif_mdp) {
+        $error['mdp_email_entreprise'] = "Le mot de passe doit comporter au moins 8 caractères et correspondre.";
     }
 
     if (!isset($_POST["cgu"])) {
-        $errors['cgu'] = "Veuillez valider les CGU";
+        $error['cgu'] = "Veuillez valider les CGU";
     }
-    var_dump($error);
+
     if (empty($error)) {
         $nom_entreprise = $_POST["nom_entreprise"];
         $ville = $_POST["ville"];

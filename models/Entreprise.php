@@ -63,7 +63,7 @@ class Entreprise
 
             $query->bindValue(":nom_entreprise", htmlspecialchars($nom_entreprise), PDO::PARAM_STR);
 
-            $query->bindValue(":mdp_entreprise", htmlspecialchars($mdp_email_entreprise), PDO::PARAM_STR);
+            $query->bindValue(":mdp_entreprise", password_hash($mdp_email_entreprise, PASSWORD_DEFAULT), PDO::PARAM_STR);
 
             $query->bindValue(":email_entreprise", $email_entreprise, PDO::PARAM_STR);
 
