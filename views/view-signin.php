@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/stye/style.css.css">
+    <link rel="stylesheet" href="../assets/style/style.css">
     <title>Signin</title>
 </head>
 
@@ -21,8 +21,11 @@
         <input type="password" id="mdp_email_entreprise" name="mdp_email_entreprise"
             value="<?= isset($_POST["mdp_email_entreprise"]) ? htmlspecialchars($_POST["mdp_email_entreprise"]) : '' ?>">
 
+        <?php if (isset($error['connexion'])) {
+            echo $error['connexion'];
+        } ?>
 
-        <input name="connexion" id="connexion" type="submit" value="Connexion">
+        <input name="connexion" id="connexion" type="submit" value="connexion">
 
         <div class="social">
             <div class="go"><i class="fab fa-google"></i> Google</div>
