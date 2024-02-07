@@ -154,7 +154,10 @@
 
         <h2 class="">Félicitation inscription validée <br>
             <hr> Veuillez vous connectez
-            <br><a href="#">Connexion</a>
+            <br>
+            <hr>
+            <a href="../controllers/controller-signin.php">Connexion</a>
+
         </h2>
 
     <?php } ?>

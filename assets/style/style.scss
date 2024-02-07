@@ -4,20 +4,9 @@
     }
 }
 
-.signin {
-    h2 {
-        font-size: 2rem;
-        text-align: center;
-    }
-
-    .form_inscription {
-
-
-        form {
-            display: flex;
-            flex-direction: column;
-            width: fit-content;
-            margin: 0 auto;
-        }
-    }
+*form {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 0 auto;
 }

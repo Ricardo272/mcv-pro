@@ -2,11 +2,7 @@
   color: red;
 }
 
-.signin h2 {
-  font-size: 2rem;
-  text-align: center;
-}
-.signin .form_inscription form {
+* form {
   display: flex;
   flex-direction: column;
   width: -moz-fit-content;
