@@ -1,4 +1,4 @@
 <?php
 // Redirection vers le contrôleur
-header("Location: controllers/controller-signin.php");
+header("Location: controllers/controller-signup.php");
 exit;
