@@ -9,6 +9,7 @@ class User
      * @param string $pseudoUser Pseudo User
      * @param string $idEntreprise Identifiant Entreprise assoc user
      * @param string $valideUser User valide 
+     * @param string $pseudo Pseudo de l'utilisateur
      *   
      * @return int Le nombre total d'utilisateurs
      *
@@ -82,6 +83,68 @@ class User
 
             // Retourner le nombre total de trajets
             return $result['total_trajets'];
+        } catch (PDOException $e) {
+            // Gestion des erreurs de connexion à la base de données
+            echo "Erreur : " . $e->getMessage();
+            die();
+        }
+    }
+    public static function lastFiveUser(
+        string $pseudo
+    ) {
+        try {
+            // Connexion à la base de données
+            $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
+
+            // Requête SQL pour afficher les derniers utilisateurs avec leur pseudo et leur photo de profil
+            $sql = "SELECT `Pseudo`, `Photo_de_profil`
+                FROM `utilisateur`
+                ORDER BY `ID_utilisateur` DESC
+                LIMIT 5";
+
+            // Préparation de la requête
+            $query = $db->prepare($sql);
+
+            // Exécution de la requête
+            $query->execute();
+
+            // Récupération des résultats
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+
+            // Retourner les résultats
+            return $result;
+
+        } catch (PDOException $e) {
+            // Gestion des erreurs de connexion à la base de données
+            echo "Erreur : " . $e->getMessage();
+            die();
+        }
+    }
+
+    public static function lastFiveTrajets()
+    {
+        try {
+            // Connexion à la base de données
+            $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
+
+            // Requête SQL pour récupérer les 5 derniers trajets enregistrés
+            $sql = "SELECT *
+                    FROM `trajets_de_l_utilisateur`
+                    ORDER BY `ID_trajet` DESC
+                    LIMIT 6";
+
+            // Préparation de la requête
+            $query = $db->prepare($sql);
+
+            // Exécution de la requête
+            $query->execute();
+
+            // Récupération des résultats
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+
+            // Retourner les résultats
+            return $result;
+
         } catch (PDOException $e) {
             // Gestion des erreurs de connexion à la base de données
             echo "Erreur : " . $e->getMessage();

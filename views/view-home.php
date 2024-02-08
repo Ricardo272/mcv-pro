@@ -17,9 +17,7 @@
         <?= $dateDuJour; ?>
     </h2>
 
-    <a href="../controllers/controller-signout.php">
-        <i class="bi bi-door-closed-fill"></i> Déconnexion
-    </a>
+
     <div class="container">
 
         <div class="row">
@@ -43,6 +41,9 @@
                 </li>
                 <li><a class="subheader">Subheader</a></li>
                 <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+                <li><a href="../controllers/controller-signout.php">
+                        <i class="bi bi-door-closed-fill"></i> Déconnexion
+                    </a></li>
 
             </ul>
 
@@ -56,8 +57,7 @@
                                 <h6>Nombre d'utilisateur(s) totaux</h6>
                                 <?php
                                 // Appeler la méthode statique countUser de la classe User pour obtenir le nombre total d'utilisateurs
-                                $totalUser = User::countUser(); // Assurez-vous que cette méthode renvoie le nombre total d'utilisateurs
-                                
+                                $totalUser = User::countUser();
                                 // Afficher le nombre total d'utilisateurs
                                 echo "<p>$totalUser</p>";
                                 ?>
@@ -71,8 +71,7 @@
                                 <h6>Nombre d'utilisateur actif totaux</h6>
                                 <?php
                                 // Appeler la méthode statique countUser de la classe User pour obtenir le nombre total d'utilisateurs
-                                $totalUserActif = User::countUserActif(); // Assurez-vous que cette méthode renvoie le nombre total d'utilisateurs
-                                
+                                $totalUserActif = User::countUserActif();
                                 // Afficher le nombre total d'utilisateurs
                                 echo "<p>$totalUserActif</p>";
                                 ?>
@@ -87,8 +86,7 @@
                                 <h6>Nombre de trajets total </h6>
                                 <?php
                                 // Appeler la méthode statique countUser de la classe User pour obtenir le nombre total d'utilisateurs
-                                $totalTrajet = User::countAllTrajet(); // Assurez-vous que cette méthode renvoie le nombre total d'utilisateurs
-                                
+                                $totalTrajet = User::countAllTrajet();
                                 // Afficher le nombre total d'utilisateurs
                                 echo "<p>$totalTrajet</p>";
                                 ?>
@@ -103,30 +101,19 @@
 
                     <div class="col s6">
                         <div class="card">
-                            <div class="card-image">
-                                <img src="images/sample-1.jpg">
-                                <span class="card-title">Card Title</span>
-                                <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                                        class="material-icons">add</i></a>
-                            </div>
                             <div class="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information. I am
-                                    convenient because I require little markup to use effectively.</p>
+                                <h6>Stats hebdo ( A venir )</h6>
+
                             </div>
                         </div>
+
                     </div>
 
                     <div class="col s6 ">
                         <div class="card">
-                            <div class="card-image">
-                                <img src="images/sample-1.jpg">
-                                <span class="card-title">Card Title</span>
-                                <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                                        class="material-icons">add</i></a>
-                            </div>
                             <div class="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information. I am
-                                    convenient because I require little markup to use effectively.</p>
+                                <h6>Les 5 derniers trajets enregistrés</h6>
+
                             </div>
                         </div>
                     </div>
@@ -134,34 +121,42 @@
                 </div>
 
                 <div class="row">
-                    <div class="col 12">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="images/sample-1.jpg">
-                                <span class="card-title">Card Title</span>
-                                <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                                        class="material-icons">add</i></a>
-                            </div>
-                            <div class="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information. I am
-                                    convenient because I require little markup to use effectively.</p>
-                            </div>
+                    <div class="col 12" class="card">
+
+                        <div class="card-content">
+                            <h6>Les 5 derniers trajets enregistrés</h6>
+                            <?php
+                            // Appeler la méthode statique lastFiveTrajet de la classe trajet pour obtenir les 5 derniers trajets
+                            $lastTrajets = User::lastFiveTrajets();
+                            // Parcourir les résultats et afficher chaque trajet
+                            foreach ($lastTrajets as $trajet) {
+                                echo "<div class='col s4' class='trajet-card'>";
+                                echo "<p>Date du trajet : " . $trajet['Date_du_trajet'] . "</p>";
+                                echo "<p>Distance parcourue : " . $trajet['Distance_parcourue'] . " km</p>";
+                                echo "</div>";
+                            }
+                            ?>
                         </div>
+
                     </div>
                 </div>
 
             </div>
 
             <div class="col s12 m4 l2">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci officiis id aut magni ratione,
-                    ducimus odio autem explicabo aliquid, doloremque dolor ea delectus ut expedita nobis voluptatem modi
-                    nesciunt reiciendis accusamus! Doloribus itaque similique sunt blanditiis eveniet repellat.
-                    Voluptatem, cumque ipsa? Libero animi illum, inventore cumque repellat saepe doloribus ullam amet,
-                    voluptatibus voluptas assumenda pariatur fuga similique ut omnis quidem tempore fugiat at.
-                    Consequuntur quisquam fugiat incidunt hic, atque rem autem ea pariatur soluta reiciendis at
-                    praesentium animi dolorum quos dignissimos vitae nulla architecto distinctio exercitationem placeat
-                    possimus repellendus accusamus eum. Cupiditate debitis illum perspiciatis iste ex id atque dolores?
-                </p>
+                <h6>Les 5 derniers utilisateurs</h6>
+                <?php
+                // Appeler la méthode statique lastFiveUser de la classe User pour obtenir les 5 derniers utilisateurs
+                $lastUsers = User::lastFiveUser("Pseudo");
+
+                // Parcourir les résultats et afficher chaque utilisateur dans une carte
+                foreach ($lastUsers as $user) {
+                    echo "<div class='user-card'>";
+                    echo "<img src='" . $user['Photo_de_profil'] . "' alt='Photo de profil'>";
+                    echo "<p>Pseudo : " . $user['Pseudo'] . "</p>";
+                    echo "</div>";
+                }
+                ?>
             </div>
 
         </div>
