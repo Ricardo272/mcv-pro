@@ -69,6 +69,13 @@
                         <div class="card">
                             <div class="card-content">
                                 <h6>Nombre d'utilisateur actif totaux</h6>
+                                <?php
+                                // Appeler la méthode statique countUser de la classe User pour obtenir le nombre total d'utilisateurs
+                                $totalUserActif = User::countUserActif(); // Assurez-vous que cette méthode renvoie le nombre total d'utilisateurs
+                                
+                                // Afficher le nombre total d'utilisateurs
+                                echo "<p>$totalUserActif</p>";
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -78,6 +85,13 @@
                         <div class="card">
                             <div class="card-content">
                                 <h6>Nombre de trajets total </h6>
+                                <?php
+                                // Appeler la méthode statique countUser de la classe User pour obtenir le nombre total d'utilisateurs
+                                $totalTrajet = User::countAllTrajet(); // Assurez-vous que cette méthode renvoie le nombre total d'utilisateurs
+                                
+                                // Afficher le nombre total d'utilisateurs
+                                echo "<p>$totalTrajet</p>";
+                                ?>
                             </div>
                         </div>
                     </div>
