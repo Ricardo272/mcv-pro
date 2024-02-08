@@ -8,17 +8,20 @@ require_once "../config.php";
 
 // Models
 require_once "../models/Entreprise.php";
+require_once "../models/User.php";
+
+
+if (isset($_SESSION['user'])) {
+    $dateDuJour = date('d F Y');
 
 
 
 
 
-
-
-
-
-
-
-
-
-include_once('../views/view-home.php');
+    // Appeler la vue
+    include_once('../views/view-home.php');
+} else {
+    // L'utilisateur n'est pas connecté, rediriger vers la page de connexion
+    header("Location: ../controllers/controller-signin.php");
+    exit();
+}

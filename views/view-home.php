@@ -13,7 +13,9 @@
 
     <h2>Home</h2>
 
-
+    <h2>
+        <?= $dateDuJour; ?>
+    </h2>
 
     <a href="../controllers/controller-signout.php">
         <i class="bi bi-door-closed-fill"></i> Déconnexion
@@ -23,8 +25,6 @@
         <div class="row">
 
             <ul class="col s12 m4 l2" id="slide-out" class="sidenav">
-
-
 
                 <li>
                     <div class="user-view">
@@ -44,8 +44,6 @@
                 <li><a class="subheader">Subheader</a></li>
                 <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
 
-
-
             </ul>
 
             <div class="col s12 m4 l8">
@@ -54,45 +52,32 @@
 
                     <div class="col s4">
                         <div class="card">
-                            <div class="card-image">
-                                <img src="images/sample-1.jpg">
-                                <span class="card-title">Card Title</span>
-                                <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                                        class="material-icons">add</i></a>
-                            </div>
                             <div class="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information. I am
-                                    convenient because I require little markup to use effectively.</p>
+                                <h6>Nombre d'utilisateur(s) totaux</h6>
+                                <?php
+                                // Appeler la méthode statique countUser de la classe User pour obtenir le nombre total d'utilisateurs
+                                $totalUser = User::countUser(); // Assurez-vous que cette méthode renvoie le nombre total d'utilisateurs
+                                
+                                // Afficher le nombre total d'utilisateurs
+                                echo "<p>$totalUser</p>";
+                                ?>
                             </div>
                         </div>
                     </div>
 
                     <div class="col s4">
                         <div class="card">
-                            <div class="card-image">
-                                <img src="images/sample-1.jpg">
-                                <span class="card-title">Card Title</span>
-                                <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                                        class="material-icons">add</i></a>
-                            </div>
                             <div class="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information. I am
-                                    convenient because I require little markup to use effectively.</p>
+                                <h6>Nombre d'utilisateur actif totaux</h6>
                             </div>
                         </div>
                     </div>
 
+
                     <div class="col s4">
                         <div class="card">
-                            <div class="card-image">
-                                <img src="images/sample-1.jpg">
-                                <span class="card-title">Card Title</span>
-                                <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                                        class="material-icons">add</i></a>
-                            </div>
                             <div class="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information. I am
-                                    convenient because I require little markup to use effectively.</p>
+                                <h6>Nombre de trajets total </h6>
                             </div>
                         </div>
                     </div>
@@ -170,7 +155,7 @@
 
 
     </div>
-    <script src="../assets/js/effet.js"></script>
+
 </body>
 
 </html>
