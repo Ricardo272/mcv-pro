@@ -10,7 +10,9 @@
 </head>
 
 <body class="signin">
+
     <h2>Page d'inscription</h2>
+
     <?php if ($showform == true) { ?>
         <div class="form_inscription">
             <form action="../controllers/controller-signup.php" method="POST" novalidate>
@@ -120,17 +122,6 @@
                     ?>
                 </span>
 
-                <label for="cgu">
-                    <a href="#">
-                        Conditions général d'utilisation
-                    </a>
-                    <input class="cache" name="cgu" type="checkbox" required value="Accepter les CGU ?">
-                </label>
-                <span class="error">
-                    <?php if (isset($error['cgu'])) {
-                        echo $error['cgu'];
-                    } ?>
-                </span>
 
                 <input name="enregister" id="enregister" type="submit" value="S'enregistrer">
 
