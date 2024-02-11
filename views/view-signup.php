@@ -10,7 +10,7 @@
     <title>Signin</title>
 </head>
 
-<body class="signin green darken-3">
+<body class="signin grey darken-3">
 
     <div class="container">
         <h2>
@@ -21,7 +21,9 @@
 
 
     <?php if ($showform == true) { ?>
-        <div class="container indigo lighten-3">
+
+        <div class="container light-green darken-4 z-depth-5 ">
+
             <form class="col s12" action="../controllers/controller-signup.php" method="POST" novalidate>
 
                 <div class="row">
@@ -157,7 +159,7 @@
 
 
                 <div class="container">
-                    <button class="btn waves-effect waves-light" name="enregister" id="enregister" type="submit"
+                    <button class="btn waves-effect waves-light btn-large" name="enregister" id="enregister" type="submit"
                         value="S'enregistrer">Valider l'inscription
                         <i class="medium material-icons right">send</i>
                     </button>
@@ -168,6 +170,32 @@
 
         </div>
 
+        <footer class="page-footer light-green darken-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Footer Content</h5>
+                        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer
+                            content.</p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Links</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2024 Copyright Text
+                    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                </div>
+            </div>
+        </footer>
 
 
 

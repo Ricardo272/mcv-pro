@@ -5,28 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../assets/style/style.css">
     <title>Signin</title>
 </head>
 
-<body class="signin">
+<body class="signin container">
+
     <h2>Connexion</h2>
-    <form class="form_inscription" action="controller-signin.php" method="POST" novalidate>
 
-        <label for="email_entreprise">Email </label>
-        <input type="email" id="email_entreprise" name="email_entreprise"
-            value="<?= isset($_POST["email_entreprise"]) ? htmlspecialchars($_POST["email_entreprise"]) : '' ?>">
+    <form class="col s12" action="controller-signin.php" method="POST" novalidate>
 
+        <div class="input-field col s12">
 
-        <label for="mdp_email_entreprise">Mot de passe </label>
-        <input type="password" id="mdp_email_entreprise" name="mdp_email_entreprise"
-            value="<?= isset($_POST["mdp_email_entreprise"]) ? htmlspecialchars($_POST["mdp_email_entreprise"]) : '' ?>">
+            <label for="email_entreprise"></label>
+            <input placeholder="Email" type="email" id="email_entreprise" name="email_entreprise"
+                value="<?= isset($_POST["email_entreprise"]) ? htmlspecialchars($_POST["email_entreprise"]) : '' ?>">
+
+        </div>
+
+        <div class="input-field col s12">
+
+            <label for="mdp_email_entreprise"></label>
+            <input placeholder="Mot de passe" type="password" id="mdp_email_entreprise" name="mdp_email_entreprise"
+                value="<?= isset($_POST["mdp_email_entreprise"]) ? htmlspecialchars($_POST["mdp_email_entreprise"]) : '' ?>">
+
+        </div>
 
         <?php if (isset($error['connexion'])) {
             echo $error['connexion'];
         } ?>
 
-        <input name="connexion" id="connexion" type="submit" value="connexion">
+
+        <div class="container">
+            <button class="btn waves-effect waves-light btn-large" name="connexion" id="connexion" type="submit"
+                value="connexion">Valider l'inscription
+                <i class="medium material-icons right">send</i>
+            </button>
+        </div>
 
         <div class="social">
             <div class="go"><i class="fab fa-google"></i> Google</div>
