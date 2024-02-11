@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../assets/style/style.css">
     <title>Home</title>
 </head>
@@ -18,7 +19,7 @@
     </h2>
 
 
-    <div class="container">
+    <div class="container ">
 
         <div class="row">
 
@@ -26,10 +27,11 @@
 
                 <li>
                     <div class="user-view">
-                        <div class="background">
-                            <img src="images/office.jpg">
+                        <div class="background ">
+                            <img src="../assets/image/image-par-defaut/">
                         </div>
-                        <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
+                        <a href="#user"><img class="circle responsive-img"
+                                src="../assets/image/image-par-defaut/img-profil-defaut.png"></a>
                         <a href="#name"><span class="white-text name">John Doe</span></a>
                         <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
                     </div>
@@ -47,7 +49,7 @@
 
             </ul>
 
-            <div class="col s12 m4 l8">
+            <div class="col s12 m4 l8 ">
 
                 <div class="row">
 
@@ -152,7 +154,9 @@
                 // Parcourir les résultats et afficher chaque utilisateur dans une carte
                 foreach ($lastUsers as $user) {
                     echo "<div class='user-card'>";
-                    echo "<img src='" . $user['Photo_de_profil'] . "' alt='Photo de profil'>";
+                    echo "<img class='circle responsive-img'
+                                src='../assets/image/image-par-defaut/img-profil-defaut.png'>";
+                    // echo "<img src='" . $user['Photo_de_profil'] . "' alt='Photo de profil'>";
                     echo "<p>Pseudo : " . $user['Pseudo'] . "</p>";
                     echo "</div>";
                 }
