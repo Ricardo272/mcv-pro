@@ -11,7 +11,7 @@
     <title>Signin</title>
 </head>
 
-<body class="signin container">
+<body class="signin container ">
 
     <h2>Connexion</h2>
 
@@ -37,22 +37,22 @@
             echo $error['connexion'];
         } ?>
 
-
-        <hr>
-        <div class="g-recaptcha" data-sitekey="6LfDZ3EpAAAAAB8fQpmGUeQHAtWPCf-pjQa7m4LQ"></div>
-        <?php
-        if (isset($errors["captcha"])) {
-            ?>
-            <span class="error">
-                <?= $errors["captcha"]; ?>
-            </span>
-            <?php
-        }
-        ?>
-
-        <hr>
-
         <div class="container">
+            <hr>
+            <div class="g-recaptcha" data-sitekey="6LcGAHEpAAAAALFq-6PWdnsym_kVi29xKhLe_9HA"></div>
+            <?php
+            if (isset($errors["captcha"])) {
+                ?>
+                <span class="error">
+                    <?= $errors["captcha"]; ?>
+                </span>
+                <?php
+            }
+            ?>
+
+            <hr>
+
+
             <button class="btn waves-effect waves-light btn-large" name="connexion" id="connexion" type="submit"
                 value="connexion">Connexion
                 <i class="medium material-icons right">send</i>

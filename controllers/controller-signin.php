@@ -12,6 +12,7 @@ require_once "../models/Entreprise.php";
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $error = [];
 
+
     if (isset($_POST["connexion"])) {
         $recaptcha_secret = CAPTCHA;
         $captcha_response = $_POST["g-recaptcha-response"];
@@ -23,11 +24,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $errors["captcha"] = "reCaptcha obligatoire";
         }
     }
-
-    if (!empty($_POST["email_entreprise"]) && !empty($_POST["mdp_email_entreprise"])) {
+    if (!empty($_POST["email_entreprise"]) && !empty($_POST["mdp_email_entreprise"]) && empty($errors)) {
 
         $email_entreprise = $_POST['email_entreprise'];
         $mdp_email_entreprise = $_POST['mdp_email_entreprise'];
+
 
         try {
             $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
@@ -51,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     $_SESSION['user'] = $resultat;
                     unset($_SESSION['user']['Mot_de_passe_email_entreprise']);
 
-                    header("Location: ../controllers/controller-home.php");
+                    header("location: ../controllers/controller-home.php");
                     exit();
                 } else {
                     $error["connexion"] = "Erreur login / Mot de passe Inconue";
