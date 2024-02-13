@@ -31,6 +31,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $error["numero_de_siret"] = "Champs obligatoire.";
     } else if (!preg_match($regex, $_POST["numero_de_siret"])) {
         $error["numero_de_siret"] = "Numéro invalide" . "<br>" . "Veuillez saisir un numéro de siret valide";
+    } else if (strlen($_POST["numero_de_siret"]) !== 14) {
+        $error["numero_de_siret"] = "Numéro invalide" . "<br>" . "Le numéro de siret se compose de 14 chiffres";
+    } else if (!ctype_digit($_POST["numero_de_siret"])) {
+        $error["numero_de_siret"] = "Numéro invalide" . "<br>" . "Veuillez saisir un numéro de siret valide";
     }
 
     if (empty($_POST["adresse_entreprise"])) {

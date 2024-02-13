@@ -15,18 +15,18 @@ class User
      *
      */
 
-    public static function countUser(
-
-    ) {
+    public static function countUser($idEntreprise)
+    {
         try {
             // Connexion à la base de données
             $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
 
             // Requête SQL pour compter le nombre total d'utilisateurs
-            $sql = "SELECT COUNT(*) AS total_utilisateur FROM `utilisateur`";
+            $sql = "SELECT COUNT(*) AS total_utilisateur FROM `utilisateur` WHERE `ID_entreprise`= :idEntreprise";
 
             // Préparation et exécution de la requête
             $query = $db->prepare($sql);
+            $query->bindValue(':idEntreprise', $idEntreprise, PDO::PARAM_INT);
             $query->execute();
 
             // Récupération du résultat
@@ -41,16 +41,17 @@ class User
         }
     }
 
-    public static function countUserActif()
+    public static function countUserActif($idEntreprise)
     {
         try {
             // Connexion à la base de données
             $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
 
             // Requête SQL pour compter le nombre total d'utilisateurs
-            $sql = "SELECT COUNT(DISTINCT u.`ID_utilisateur`) AS total_utilisateur_actif FROM `utilisateur` AS u JOIN `trajets_de_l_utilisateur` AS t ON u.`ID_utilisateur` = t.`ID_utilisateur`;";
+            $sql = "SELECT COUNT(DISTINCT u.`ID_utilisateur`) AS total_utilisateur_actif FROM `utilisateur` AS u JOIN `trajets_de_l_utilisateur` AS t ON u.`ID_utilisateur` = t.`ID_utilisateur` WHERE `ID_entreprise`= :idEntreprise";
             // Préparation et exécution de la requête
             $query = $db->prepare($sql);
+            $query->bindValue(':idEntreprise', $idEntreprise, PDO::PARAM_INT);
             $query->execute();
 
             // Récupération du résultat
@@ -65,17 +66,18 @@ class User
         }
     }
 
-    public static function countAllTrajet()
+    public static function countAllTrajet($idEntreprise)
     {
         try {
             // Connexion à la base de données
             $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
 
             // Requête SQL pour compter le nombre total de trajets
-            $sql = "SELECT COUNT(*) AS total_trajets FROM `trajets_de_l_utilisateur`";
+            $sql = "SELECT COUNT(*) AS total_trajets FROM `trajets_de_l_utilisateur` NATURAL JOIN `utilisateur` WHERE `ID_entreprise` = :idEntreprise;";
 
             // Préparation et exécution de la requête
             $query = $db->prepare($sql);
+            $query->bindValue(':idEntreprise', $idEntreprise, PDO::PARAM_INT);
             $query->execute();
 
             // Récupération du résultat
@@ -90,20 +92,20 @@ class User
         }
     }
     public static function lastFiveUser(
-        string $pseudo
+        string $idEntreprise
+
     ) {
         try {
             // Connexion à la base de données
             $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
 
             // Requête SQL pour afficher les derniers utilisateurs avec leur pseudo et leur photo de profil
-            $sql = "SELECT `Pseudo`, `Photo_de_profil`
-                FROM `utilisateur`
-                ORDER BY `ID_utilisateur` DESC
-                LIMIT 5";
+            $sql = "SELECT * FROM `utilisateur` WHERE `ID_entreprise` = :idEntreprise ORDER BY `ID_utilisateur` DESC LIMIT 5";
 
             // Préparation de la requête
             $query = $db->prepare($sql);
+            $query->bindValue(':idEntreprise', $idEntreprise, PDO::PARAM_INT);
+
 
             // Exécution de la requête
             $query->execute();
@@ -121,20 +123,18 @@ class User
         }
     }
 
-    public static function lastFiveTrajets()
+    public static function lastFiveTrajets($idEntreprise)
     {
         try {
             // Connexion à la base de données
             $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
 
             // Requête SQL pour récupérer les 5 derniers trajets enregistrés
-            $sql = "SELECT *
-                    FROM `trajets_de_l_utilisateur`
-                    ORDER BY `ID_trajet` DESC
-                    LIMIT 6";
+            $sql = "SELECT * FROM `trajets_de_l_utilisateur` NATURAL JOIN `utilisateur` WHERE `ID_entreprise` = :idEntreprise ORDER BY `ID_trajet` DESC LIMIT 6;";
 
             // Préparation de la requête
             $query = $db->prepare($sql);
+            $query->bindValue(':idEntreprise', $idEntreprise, PDO::PARAM_INT);
 
             // Exécution de la requête
             $query->execute();

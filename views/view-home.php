@@ -27,22 +27,26 @@
 
                 <li>
                     <div class="user-view">
-                        <div class="background ">
-                            <img src="../assets/image/image-par-defaut/">
-                        </div>
                         <a href="#user"><img class="circle responsive-img"
                                 src="../assets/image/image-par-defaut/img-profil-defaut.png"></a>
-                        <a href="#name"><span class="white-text name">John Doe</span></a>
-                        <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+
                     </div>
                 </li>
-                <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-                <li><a href="#!">Second Link</a></li>
                 <li>
-                    <div class="divider"></div>
+                    <?= $_SESSION["user"]["Nom_de_l_entreprise"]; ?>
                 </li>
-                <li><a class="subheader">Subheader</a></li>
-                <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+                <li>
+                    <?= $_SESSION["user"]["Ville_de_l_entreprise"]; ?>
+                </li>
+                <li>
+                    <?= $_SESSION["user"]["Adresse_de_l_entreprise"]; ?>
+                </li>
+                <li>
+                    <?= $_SESSION["user"]["Code_postal_de_l_entreprise"]; ?>
+                </li>
+                <li>
+                    <?= $_SESSION["user"]["Numéro_de_siret_entreprise"]; ?>
+                </li>
                 <li><a href="../controllers/controller-signout.php">
                         <i class="bi bi-door-closed-fill"></i> Déconnexion
                     </a></li>
@@ -58,9 +62,7 @@
                             <div class="card-content">
                                 <h6>Nombre d'utilisateur(s) totaux</h6>
                                 <?php
-                                // Appeler la méthode statique countUser de la classe User pour obtenir le nombre total d'utilisateurs
-                                $totalUser = User::countUser();
-                                // Afficher le nombre total d'utilisateurs
+                                $totalUser = User::countUser($_SESSION["user"]["ID_entreprise"]);
                                 echo "<p>$totalUser</p>";
                                 ?>
                             </div>
@@ -72,9 +74,7 @@
                             <div class="card-content">
                                 <h6>Nombre d'utilisateur actif totaux</h6>
                                 <?php
-                                // Appeler la méthode statique countUser de la classe User pour obtenir le nombre total d'utilisateurs
-                                $totalUserActif = User::countUserActif();
-                                // Afficher le nombre total d'utilisateurs
+                                $totalUserActif = User::countUserActif($_SESSION["user"]["ID_entreprise"]);
                                 echo "<p>$totalUserActif</p>";
                                 ?>
                             </div>
@@ -87,9 +87,7 @@
                             <div class="card-content">
                                 <h6>Nombre de trajets total </h6>
                                 <?php
-                                // Appeler la méthode statique countUser de la classe User pour obtenir le nombre total d'utilisateurs
-                                $totalTrajet = User::countAllTrajet();
-                                // Afficher le nombre total d'utilisateurs
+                                $totalTrajet = User::countAllTrajet($_SESSION["user"]["ID_entreprise"]);
                                 echo "<p>$totalTrajet</p>";
                                 ?>
                             </div>
@@ -128,9 +126,7 @@
                         <div class="card-content">
                             <h6>Les 5 derniers trajets enregistrés</h6>
                             <?php
-                            // Appeler la méthode statique lastFiveTrajet de la classe trajet pour obtenir les 5 derniers trajets
-                            $lastTrajets = User::lastFiveTrajets();
-                            // Parcourir les résultats et afficher chaque trajet
+                            $lastTrajets = User::lastFiveTrajets($_SESSION["user"]["ID_entreprise"]);
                             foreach ($lastTrajets as $trajet) {
                                 echo "<div class='col s4' class='trajet-card'>";
                                 echo "<p>Date du trajet : " . $trajet['Date_du_trajet'] . "</p>";
@@ -148,10 +144,8 @@
             <div class="col s12 m4 l2">
                 <h6>Les 5 derniers utilisateurs</h6>
                 <?php
-                // Appeler la méthode statique lastFiveUser de la classe User pour obtenir les 5 derniers utilisateurs
-                $lastUsers = User::lastFiveUser("Pseudo");
+                $lastUsers = User::lastFiveUser($_SESSION["user"]["ID_entreprise"]);
 
-                // Parcourir les résultats et afficher chaque utilisateur dans une carte
                 foreach ($lastUsers as $user) {
                     echo "<div class='user-card'>";
                     echo "<img class='circle responsive-img'
