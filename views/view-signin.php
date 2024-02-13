@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../assets/style/style.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <title>Signin</title>
 </head>
 
@@ -37,9 +38,23 @@
         } ?>
 
 
+        <hr>
+        <div class="g-recaptcha" data-sitekey="6LfDZ3EpAAAAAB8fQpmGUeQHAtWPCf-pjQa7m4LQ"></div>
+        <?php
+        if (isset($errors["captcha"])) {
+            ?>
+            <span class="error">
+                <?= $errors["captcha"]; ?>
+            </span>
+            <?php
+        }
+        ?>
+
+        <hr>
+
         <div class="container">
             <button class="btn waves-effect waves-light btn-large" name="connexion" id="connexion" type="submit"
-                value="connexion">Valider l'inscription
+                value="connexion">Connexion
                 <i class="medium material-icons right">send</i>
             </button>
         </div>

@@ -12,6 +12,17 @@ require_once "../models/Entreprise.php";
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $error = [];
 
+    if (isset($_POST["connexion"])) {
+        $recaptcha_secret = CAPTCHA;
+        $captcha_response = $_POST["g-recaptcha-response"];
+        $responseData = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$recaptcha_secret&response=$captcha_response");
+
+        $dataRow = json_decode($responseData, true);
+
+        if (!$dataRow["success"] == true) {
+            $errors["captcha"] = "reCaptcha obligatoire";
+        }
+    }
 
     if (!empty($_POST["email_entreprise"]) && !empty($_POST["mdp_email_entreprise"])) {
 
