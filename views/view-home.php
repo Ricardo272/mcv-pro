@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="../assets/style/style.css">
     <title>Home</title>
 </head>
@@ -120,7 +121,28 @@
                     <div class="col s6 ">
                         <div class="card">
                             <div class="card-content z-depth-5 black">
-                                <h6>Stats des moyens de transport ( à venir )</h6>
+                                <h6>Stats des moyens de transport </h6>
+
+                                <div><canvas id="graph"></canvas></div>
+                                <script>
+                                    // Récupérer l'élément canvas
+                                    const graphique = document.getElementById('graph');
+
+                                    // Décodez les données JSON récupérées depuis PHP
+                                    const data = <?php echo $json_data; ?>;
+
+                                    new Chart(graphique, {
+                                        type: "doughnut",
+                                        data: data,
+                                        options: {
+                                            scales: {
+                                                y: {
+                                                    beginAtZero: true
+                                                }
+                                            }
+                                        }
+                                    });
+                                </script>
 
                             </div>
                         </div>
@@ -169,6 +191,7 @@
 
     </div>
 
+    <script src="../assets/js/scriptGraph.js"></script>
 </body>
 
 </html>

@@ -9,13 +9,14 @@ require_once "../config.php";
 // Models
 require_once "../models/Entreprise.php";
 require_once "../models/User.php";
+require_once "../models/Trajet.php";
 
 
 if (isset($_SESSION['user'])) {
     $dateDuJour = date('d F Y');
 
 
-
+    $json_data = trajet::countAllTrajet();
 
 
     // Appeler la vue
