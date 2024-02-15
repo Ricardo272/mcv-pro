@@ -138,6 +138,9 @@
                                             scales: {
                                                 y: {
                                                     beginAtZero: true
+                                                },
+                                                x: {
+                                                    beginAtZero: true
                                                 }
                                             }
                                         }
