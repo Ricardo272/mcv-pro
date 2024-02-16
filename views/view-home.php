@@ -8,12 +8,13 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="../assets/style/style.css">
+
     <title>Home</title>
 </head>
 
-<body id="dashboard" class="grey darken-3 white-text ">
+<body class="grey darken-3 white-text " id="dashboard">
 
-    <h2 class="center-align">DASHBOARD</h2>
+    <h2 class="center-align" id="titreDashbord">DASHBOARD</h2>
 
     <h3 class="valign-wrapper">
         <i class="large material-icons">access_time</i>
