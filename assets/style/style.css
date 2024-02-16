@@ -3,5 +3,7 @@
 }
 
 #dashbord #titreDashbord {
+  width: -moz-fit-content;
+  width: fit-content;
   background-color: black;
 }/*# sourceMappingURL=style.css.map */

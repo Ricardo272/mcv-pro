@@ -12,7 +12,7 @@
     <title>Home</title>
 </head>
 
-<body class="grey darken-3 white-text " id="dashbard">
+<body class="grey darken-3 white-text " id="dashbord">
 
     <h2 class="center-align" id="titreDashbord">DASHBOARD</h2>
 
