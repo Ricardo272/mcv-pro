@@ -16,7 +16,7 @@ if (isset($_SESSION['user'])) {
     $dateDuJour = date('d F Y');
 
 
-    $json_data = trajet::countAllTrajet();
+    $json_dataTrajetGraph = trajet::countAllTrajetGraph();
 
 
     // Appeler la vue

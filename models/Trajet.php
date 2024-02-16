@@ -9,7 +9,7 @@ class trajet
      * 
      */
 
-    public static function countAllTrajet()
+    public static function countAllTrajetGraph()
     {
         try {
             // Création d'un objet $db selon la classe PDO
@@ -25,27 +25,29 @@ class trajet
             $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
             // Formater les données pour qu'elles correspondent à la structure souhaitée
-            $labels = [];
-            $data = [];
+            $typeTransport = [];
+            $nbTrajet = [];
+
             foreach ($result as $row) {
-                $labels[] = $row['RIDE_TYPE'];
-                $data[] = $row['Nombre_utilisations'];
+                $typeTransport[] = $row['RIDE_TYPE'];
+                $nbTrajet[] = $row['Nombre_utilisations'];
+
             }
 
             // Construire un tableau associatif pour encoder en JSON
-            $json_data = [
-                'labels' => $labels,
+            $json_dataTrajetGraph = [
+                'labels' => $typeTransport,
                 'datasets' => [
                     [
                         'label' => 'Trajets',
-                        'data' => $data,
+                        'data' => $nbTrajet,
                         'borderWidth' => 2
                     ]
                 ]
             ];
 
             // Encoder les données en JSON
-            $json_result = json_encode($json_data);
+            $json_result = json_encode($json_dataTrajetGraph);
 
             return $json_result;
 

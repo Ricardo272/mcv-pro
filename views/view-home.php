@@ -11,7 +11,7 @@
     <title>Home</title>
 </head>
 
-<body class="grey darken-3 white-text ">
+<body id="dashboard" class="grey darken-3 white-text ">
 
     <h2 class="center-align">DASHBOARD</h2>
 
@@ -129,11 +129,11 @@
                                     const graphique = document.getElementById('graph');
 
                                     // Décodez les données JSON récupérées depuis PHP
-                                    const data = <?php echo $json_data; ?>;
+                                    const nbTrajet = <?php echo $json_dataTrajetGraph; ?>;
 
                                     new Chart(graphique, {
                                         type: "doughnut",
-                                        data: data,
+                                        data: nbTrajet,
                                         options: {
                                             scales: {
                                                 y: {
@@ -179,10 +179,10 @@
 
                 foreach ($lastUsers as $user) {
                     echo "<div class='user-card'>";
+                    echo "<p class='center-align' >" . $user['Pseudo'] . "</p>";
                     echo "<img class='circle responsive-img'
                                 src='../assets/image/image-par-defaut/img-profil-defaut.png'>";
                     // echo "<img src='" . $user['Photo_de_profil'] . "' alt='Photo de profil'>";
-                    echo "<p>Pseudo : " . $user['Pseudo'] . "</p>";
                     echo "</div>";
                 }
                 ?>
@@ -194,7 +194,7 @@
 
     </div>
 
-    <script src="../assets/js/scriptGraph.js"></script>
+
 </body>
 
 </html>
