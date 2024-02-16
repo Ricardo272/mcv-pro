@@ -95,7 +95,7 @@
                                 <h6>Nombre d'utilisateur(s) totaux</h6>
                                 <?php
                                 $totalUser = User::countUser($_SESSION["user"]["ID_entreprise"]);
-                                echo "<p class='nb'>$totalUser</p>";
+                                echo "<p class='nb'><i class='material-icons'>person</i>$totalUser</p>";
                                 ?>
                             </div>
                         </div>
@@ -107,7 +107,7 @@
                                 <h6>Nombre d'utilisateur(s) actif totaux</h6>
                                 <?php
                                 $totalUserActif = User::countUserActif($_SESSION["user"]["ID_entreprise"]);
-                                echo "<p class='nb'>$totalUserActif</p>";
+                                echo "<p class='nb'> <i class='material-icons'> directions_bike</i>$totalUserActif</p>";
                                 ?>
                             </div>
                         </div>
@@ -120,7 +120,7 @@
                                 <h6>Nombre de trajets totaux <br><br></h6>
                                 <?php
                                 $totalTrajet = User::countAllTrajet($_SESSION["user"]["ID_entreprise"]);
-                                echo "<p class='nb'>$totalTrajet</p>";
+                                echo "<p class='nb'><i class='material-icons'>my_location</i>$totalTrajet</p>";
                                 ?>
                             </div>
                         </div>

@@ -11,6 +11,7 @@
         margin-top: .5rem;
         padding: .5rem;
         border-radius: 1rem;
+        font-weight: bold;
     }
 
     #dateDuJour {
@@ -19,6 +20,8 @@
         padding: .5rem;
         border-radius: 1rem;
         margin: .5rem;
+        font-weight: bold;
+
     }
 
     #sideNav {
@@ -52,12 +55,15 @@
             .titreInfo {
                 font-size: 1.2rem;
                 color: #263238;
-                font-weight: bold
+                font-weight: bold;
+                text-transform: capitalize;
+
             }
 
             .dataInfo {
                 font-size: .8rem;
-                font-weight: bold
+                font-weight: bold;
+                text-transform: capitalize;
             }
 
 
@@ -77,17 +83,30 @@
                 border-radius: 1rem;
 
                 h6 {
-                    font-weight: bold
+                    font-weight: bold;
                 }
 
                 .nb {
                     font-size: 2rem;
-                    font-weight: bold
+                    font-weight: bold;
+                    margin: 0 auto;
+
+                    i {
+                        margin-right: .5rem;
+                    }
                 }
             }
         }
 
         #cardUserTot:hover {
+            h6 {
+                display: none;
+            }
+
+            .nb {
+                font-weight: bold
+            }
+
             color: red;
         }
 
@@ -104,13 +123,21 @@
 
                 .nb {
                     font-size: 2rem;
-                    font-weight: bold
+                    font-weight: bold;
+
+                    i {
+                        margin-right: .5rem;
+                    }
                 }
             }
         }
 
         #cardActifTot:hover {
             color: red;
+
+            h6 {
+                display: none;
+            }
         }
 
         #cardTrajetTot {
@@ -121,18 +148,28 @@
                 border-radius: 1rem;
 
                 h6 {
-                    font-weight: bold
+                    font-weight: bold;
+
+
                 }
 
                 .nb {
                     font-size: 2rem;
                     font-weight: bold;
+
+                    i {
+                        margin-right: .5rem;
+                    }
                 }
             }
         }
 
         #cardTrajetTot:hover {
             color: red;
+
+            h6 {
+                display: none;
+            }
         }
 
         #cardGraphStat {
@@ -143,7 +180,11 @@
                 border-radius: 1rem;
 
                 h6 {
-                    font-weight: bold
+                    font-weight: bold;
+
+                    i {
+                        margin-right: .5rem;
+                    }
                 }
             }
         }
@@ -156,7 +197,7 @@
                 border-radius: 1rem;
 
                 h6 {
-                    font-weight: bold
+                    font-weight: bold;
                 }
             }
         }
@@ -172,9 +213,10 @@
             }
 
             #cardTrajet {
+                text-transform: capitalize;
 
                 h6 {
-                    font-weight: bold
+                    font-weight: bold;
                 }
             }
 
@@ -209,6 +251,7 @@
             #userPseudo {
                 margin: 0;
                 font-weight: bold;
+                text-transform: capitalize;
 
             }
 

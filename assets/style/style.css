@@ -9,6 +9,7 @@
   margin-top: 0.5rem;
   padding: 0.5rem;
   border-radius: 1rem;
+  font-weight: bold;
 }
 #dashbord #dateDuJour {
   font-size: 2rem;
@@ -17,6 +18,7 @@
   padding: 0.5rem;
   border-radius: 1rem;
   margin: 0.5rem;
+  font-weight: bold;
 }
 #dashbord #sideNav {
   margin: 0;
@@ -48,10 +50,12 @@
   font-size: 1.2rem;
   color: #263238;
   font-weight: bold;
+  text-transform: capitalize;
 }
 #dashbord #sideNav .contours .dataInfo {
   font-size: 0.8rem;
   font-weight: bold;
+  text-transform: capitalize;
 }
 #dashbord #ensembleDashbord {
   margin-top: 1rem;
@@ -71,9 +75,19 @@
 #dashbord #ensembleDashbord #cardUserTot #userTot .nb {
   font-size: 2rem;
   font-weight: bold;
+  margin: 0 auto;
+}
+#dashbord #ensembleDashbord #cardUserTot #userTot .nb i {
+  margin-right: 0.5rem;
 }
 #dashbord #ensembleDashbord #cardUserTot:hover {
   color: red;
+}
+#dashbord #ensembleDashbord #cardUserTot:hover h6 {
+  display: none;
+}
+#dashbord #ensembleDashbord #cardUserTot:hover .nb {
+  font-weight: bold;
 }
 #dashbord #ensembleDashbord #cardActifTot {
   border-radius: 1rem;
@@ -89,8 +103,14 @@
   font-size: 2rem;
   font-weight: bold;
 }
+#dashbord #ensembleDashbord #cardActifTot #userActifTot .nb i {
+  margin-right: 0.5rem;
+}
 #dashbord #ensembleDashbord #cardActifTot:hover {
   color: red;
+}
+#dashbord #ensembleDashbord #cardActifTot:hover h6 {
+  display: none;
 }
 #dashbord #ensembleDashbord #cardTrajetTot {
   border-radius: 1rem;
@@ -106,8 +126,14 @@
   font-size: 2rem;
   font-weight: bold;
 }
+#dashbord #ensembleDashbord #cardTrajetTot #trajetTot .nb i {
+  margin-right: 0.5rem;
+}
 #dashbord #ensembleDashbord #cardTrajetTot:hover {
   color: red;
+}
+#dashbord #ensembleDashbord #cardTrajetTot:hover h6 {
+  display: none;
 }
 #dashbord #ensembleDashbord #cardGraphStat {
   border-radius: 1rem;
@@ -118,6 +144,9 @@
 }
 #dashbord #ensembleDashbord #cardGraphStat #GraphStat h6 {
   font-weight: bold;
+}
+#dashbord #ensembleDashbord #cardGraphStat #GraphStat h6 i {
+  margin-right: 0.5rem;
 }
 #dashbord #ensembleDashbord #cardAVenir {
   border-radius: 1rem;
@@ -137,6 +166,9 @@
   border-radius: 1rem;
   padding: 1rem;
   font-weight: bold;
+}
+#dashbord #ensembleDashbord #cardLastTrajet #cardTrajet {
+  text-transform: capitalize;
 }
 #dashbord #ensembleDashbord #cardLastTrajet #cardTrajet h6 {
   font-weight: bold;
@@ -168,6 +200,7 @@
 #dashbord #blockLastUser #dataUser #userPseudo {
   margin: 0;
   font-weight: bold;
+  text-transform: capitalize;
 }
 #dashbord #blockLastUser #dataUser img {
   width: 3rem;
