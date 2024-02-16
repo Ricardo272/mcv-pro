@@ -5,5 +5,171 @@
 #dashbord #titreDashbord {
   width: -moz-fit-content;
   width: fit-content;
-  background-color: black;
+  margin: 0 auto;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+#dashbord #dateDuJour {
+  font-size: 2rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  margin: 0.5rem;
+}
+#dashbord #sideNav {
+  margin: 0;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: solid grey;
+  line-height: 0.5rem;
+}
+#dashbord #sideNav .deconnexion {
+  color: rgb(54, 162, 235);
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+#dashbord #sideNav .deconnexion:hover {
+  color: red;
+}
+#dashbord #sideNav .contours {
+  display: flex;
+  flex-direction: column;
+  background-color: grey;
+  border-radius: 0.5rem;
+  text-align: center;
+  margin: 1rem;
+}
+#dashbord #sideNav .contours .titreInfo {
+  font-size: 1.2rem;
+  color: #263238;
+  font-weight: bold;
+}
+#dashbord #sideNav .contours .dataInfo {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+#dashbord #ensembleDashbord {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+#dashbord #ensembleDashbord #cardUserTot {
+  border-radius: 1rem;
+}
+#dashbord #ensembleDashbord #cardUserTot #userTot {
+  border: solid grey;
+  border-radius: 1rem;
+}
+#dashbord #ensembleDashbord #cardUserTot #userTot h6 {
+  font-weight: bold;
+}
+#dashbord #ensembleDashbord #cardUserTot #userTot .nb {
+  font-size: 2rem;
+  font-weight: bold;
+}
+#dashbord #ensembleDashbord #cardUserTot:hover {
+  color: red;
+}
+#dashbord #ensembleDashbord #cardActifTot {
+  border-radius: 1rem;
+}
+#dashbord #ensembleDashbord #cardActifTot #userActifTot {
+  border: solid grey;
+  border-radius: 1rem;
+}
+#dashbord #ensembleDashbord #cardActifTot #userActifTot h6 {
+  font-weight: bold;
+}
+#dashbord #ensembleDashbord #cardActifTot #userActifTot .nb {
+  font-size: 2rem;
+  font-weight: bold;
+}
+#dashbord #ensembleDashbord #cardActifTot:hover {
+  color: red;
+}
+#dashbord #ensembleDashbord #cardTrajetTot {
+  border-radius: 1rem;
+}
+#dashbord #ensembleDashbord #cardTrajetTot #trajetTot {
+  border: solid grey;
+  border-radius: 1rem;
+}
+#dashbord #ensembleDashbord #cardTrajetTot #trajetTot h6 {
+  font-weight: bold;
+}
+#dashbord #ensembleDashbord #cardTrajetTot #trajetTot .nb {
+  font-size: 2rem;
+  font-weight: bold;
+}
+#dashbord #ensembleDashbord #cardTrajetTot:hover {
+  color: red;
+}
+#dashbord #ensembleDashbord #cardGraphStat {
+  border-radius: 1rem;
+}
+#dashbord #ensembleDashbord #cardGraphStat #GraphStat {
+  border: solid grey;
+  border-radius: 1rem;
+}
+#dashbord #ensembleDashbord #cardGraphStat #GraphStat h6 {
+  font-weight: bold;
+}
+#dashbord #ensembleDashbord #cardAVenir {
+  border-radius: 1rem;
+}
+#dashbord #ensembleDashbord #cardAVenir #aVenir {
+  border: solid grey;
+  border-radius: 1rem;
+}
+#dashbord #ensembleDashbord #cardAVenir #aVenir h6 {
+  font-weight: bold;
+}
+#dashbord #ensembleDashbord #cardLastTrajet {
+  border-radius: 1rem;
+}
+#dashbord #ensembleDashbord #cardLastTrajet #lastTrajet {
+  border: solid grey;
+  border-radius: 1rem;
+  padding: 1rem;
+  font-weight: bold;
+}
+#dashbord #ensembleDashbord #cardLastTrajet #cardTrajet h6 {
+  font-weight: bold;
+}
+#dashbord #ensembleDashbord #cardLastTrajet #cardTrajet:hover {
+  color: red;
+  border-radius: 1rem;
+}
+#dashbord #blockLastUser {
+  background-color: grey;
+  border: solid black;
+  border-radius: 1rem;
+}
+#dashbord #blockLastUser #lastUser {
+  border: solid #263238;
+  border-radius: 1rem;
+  font-weight: bold;
+  padding: 0.5rem;
+}
+#dashbord #blockLastUser #dataUser {
+  padding: 0.5rem;
+  display: flex;
+  margin: 0.5rem;
+  border: solid;
+  border-radius: 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+#dashbord #blockLastUser #dataUser #userPseudo {
+  margin: 0;
+  font-weight: bold;
+}
+#dashbord #blockLastUser #dataUser img {
+  width: 3rem;
+  height: auto;
 }/*# sourceMappingURL=style.css.map */

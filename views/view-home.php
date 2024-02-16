@@ -14,19 +14,19 @@
 
 <body class="grey darken-3 white-text " id="dashbord">
 
-    <h2 class="center-align" id="titreDashbord">DASHBOARD</h2>
+    <h2 class="black" id="titreDashbord">DASHBOARD</h2>
 
-    <h3 class="valign-wrapper">
+    <h3 class="valign-wrapper black" id="dateDuJour">
         <i class="large material-icons">access_time</i>
         <?= $dateDuJour; ?>
     </h3>
 
 
-    <div class="container ">
+    <div class="container blue-grey darken-4" id="ensembleDashbord">
 
         <div class="row">
 
-            <ul class="col s12 m4 l2 " id="slide-out" class="sidenav">
+            <ul class="col s12 m4 l2 black" id="sideNav">
 
                 <li>
                     <div class="user-view ">
@@ -36,30 +36,52 @@
                     </div>
                 </li>
                 <li>
-                    <p class="valign-wrapper">
-                        Entreprise :
-                        <?= $_SESSION["user"]["Nom_de_l_entreprise"]; ?>
-                    </p>
+                    <div class="contours">
+                        <p class="titreInfo">Entreprise</p>
+                        <p class="dataInfo">
+                            <?= $_SESSION["user"]["Nom_de_l_entreprise"]; ?>
+                        </p>
+
+                    </div>
+
                 </li>
                 <li>
-                    Ville :
-                    <?= $_SESSION["user"]["Ville_de_l_entreprise"]; ?>
+                    <div class="contours">
+                        <p class="titreInfo">Ville</p>
+                        <p class="dataInfo">
+                            <?= $_SESSION["user"]["Ville_de_l_entreprise"]; ?>
+                        </p>
+                    </div>
                 </li>
                 <li>
-                    Adresse :
-                    <?= $_SESSION["user"]["Adresse_de_l_entreprise"]; ?>
+                    <div class="contours">
+                        <p class="titreInfo">Adresse</p>
+                        <p class="dataInfo">
+                            <?= $_SESSION["user"]["Adresse_de_l_entreprise"]; ?>
+                        </p>
+                    </div>
                 </li>
                 <li>
-                    Code postal :
-                    <?= $_SESSION["user"]["Code_postal_de_l_entreprise"]; ?>
+                    <div class="contours">
+                        <p class="titreInfo">Code postal</p>
+                        <p class="dataInfo">
+                            <?= $_SESSION["user"]["Code_postal_de_l_entreprise"]; ?>
+                        </p>
+                    </div>
                 </li>
                 <li>
-                    Siret :
-                    <?= $_SESSION["user"]["Numéro_de_siret_entreprise"]; ?>
+                    <div class="contours">
+                        <p class="titreInfo">Siret</p>
+                        <p class="dataInfo">
+                            <?= $_SESSION["user"]["Numéro_de_siret_entreprise"]; ?>
+                        </p>
+                    </div>
+
                 </li>
-                <li class="hoverable"><a href="../controllers/controller-signout.php">
-                        <i class="bi bi-door-closed-fill"></i> Déconnexion
-                    </a></li>
+
+                <a class="deconnexion" href="../controllers/controller-signout.php">
+                    Déconnexion
+                </a>
 
             </ul>
 
@@ -68,24 +90,24 @@
                 <div class="row">
 
                     <div class="col s4">
-                        <div class="card">
-                            <div class="card-content hoverable black">
+                        <div class="card" id="cardUserTot">
+                            <div id="userTot" class="card-content hoverable black">
                                 <h6>Nombre d'utilisateur(s) totaux</h6>
                                 <?php
                                 $totalUser = User::countUser($_SESSION["user"]["ID_entreprise"]);
-                                echo "<p>$totalUser</p>";
+                                echo "<p class='nb'>$totalUser</p>";
                                 ?>
                             </div>
                         </div>
                     </div>
 
                     <div class="col s4">
-                        <div class="card">
-                            <div class="card-content hoverable black">
+                        <div class="card" id="cardActifTot">
+                            <div id="userActifTot" class="card-content hoverable black">
                                 <h6>Nombre d'utilisateur(s) actif totaux</h6>
                                 <?php
                                 $totalUserActif = User::countUserActif($_SESSION["user"]["ID_entreprise"]);
-                                echo "<p>$totalUserActif</p>";
+                                echo "<p class='nb'>$totalUserActif</p>";
                                 ?>
                             </div>
                         </div>
@@ -93,12 +115,12 @@
 
 
                     <div class="col s4">
-                        <div class="card">
-                            <div class="card-content hoverable black">
-                                <h6>Nombre de trajets totaux </h6>
+                        <div class="card" id="cardTrajetTot">
+                            <div id="trajetTot" class="card-content hoverable black">
+                                <h6>Nombre de trajets totaux <br><br></h6>
                                 <?php
                                 $totalTrajet = User::countAllTrajet($_SESSION["user"]["ID_entreprise"]);
-                                echo "<p>$totalTrajet</p>";
+                                echo "<p class='nb'>$totalTrajet</p>";
                                 ?>
                             </div>
                         </div>
@@ -110,8 +132,8 @@
                 <div class="row">
 
                     <div class="col s6">
-                        <div class="card">
-                            <div class="card-content hoverable black">
+                        <div class="card" id="cardAVenir">
+                            <div class="card-content hoverable black" id="aVenir">
                                 <h6>Stats hebdo ( A venir )</h6>
 
                             </div>
@@ -120,8 +142,8 @@
                     </div>
 
                     <div class="col s6 ">
-                        <div class="card">
-                            <div class="card-content z-depth-5 black">
+                        <div class="card" id="cardGraphStat">
+                            <div class="card-content z-depth-5 black" id="GraphStat">
                                 <h6>Stats des moyens de transport </h6>
 
                                 <div><canvas id="graph"></canvas></div>
@@ -154,16 +176,15 @@
 
                 </div>
 
-                <div class="card-content ">
+                <div class="card-content" id="cardLastTrajet">
 
-
-                    <h6 class="center-align z-depth-5 black">Les 5 derniers trajets enregistrés</h6>
+                    <h6 class="center-align z-depth-5 black" id="lastTrajet">Les 5 derniers trajets enregistrés</h6>
                     <?php
                     $lastTrajets = User::lastFiveTrajets($_SESSION["user"]["ID_entreprise"]);
                     foreach ($lastTrajets as $trajet) {
-                        echo "<div class='col s4 center-align trajet-card'>";
-                        echo "<p><h6>Date du trajet</h6>" . $trajet['Date_du_trajet'] . "</p>";
-                        echo "<p><h6>Distance parcourue</h6> " . $trajet['Distance_parcourue'] . " km</p>";
+                        echo "<div class='col s4 center-align hoverable' id='cardTrajet'>";
+                        echo "<h6>Date du trajet</h6>" . $trajet['Date_du_trajet'];
+                        echo "<h6>Distance parcourue</h6> " . $trajet['Distance_parcourue'] . " Km";
                         echo "</div>";
                     }
                     ?>
@@ -173,17 +194,16 @@
 
             </div>
 
-            <div class="col s12 m4 l2">
-                <h6 class="center-align z-depth-5 black">Les 5 derniers utilisateurs</h6>
+            <div id="blockLastUser" class="col s12 m4 l2">
+                <h6 id="lastUser" class="center-align z-depth-5 black">Les 5 derniers utilisateurs</h6>
                 <?php
                 $lastUsers = User::lastFiveUser($_SESSION["user"]["ID_entreprise"]);
 
                 foreach ($lastUsers as $user) {
-                    echo "<div class='user-card'>";
-                    echo "<p class='center-align' >" . $user['Pseudo'] . "</p>";
+                    echo "<div id='dataUser' class='user-card black'>";
+                    echo "<p id='userPseudo' >" . $user['Pseudo'] . "</p>";
                     echo "<img class='circle responsive-img'
                                 src='../assets/image/image-par-defaut/img-profil-defaut.png'>";
-                    // echo "<img src='" . $user['Photo_de_profil'] . "' alt='Photo de profil'>";
                     echo "</div>";
                 }
                 ?>

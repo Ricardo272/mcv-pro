@@ -7,6 +7,217 @@
 #dashbord {
     #titreDashbord {
         width: fit-content;
-        background-color: black;
+        margin: 0 auto;
+        margin-top: .5rem;
+        padding: .5rem;
+        border-radius: 1rem;
     }
+
+    #dateDuJour {
+        font-size: 2rem;
+        width: fit-content;
+        padding: .5rem;
+        border-radius: 1rem;
+        margin: .5rem;
+    }
+
+    #sideNav {
+        margin: 0;
+        padding: 1rem;
+        border-radius: 1rem;
+        border: solid grey;
+        line-height: .5rem;
+
+        .deconnexion {
+            color: rgb(54 162 235);
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            font-size: 1.5rem;
+            padding: 1rem;
+        }
+
+        .deconnexion:hover {
+            color: red;
+        }
+
+        .contours {
+            display: flex;
+            flex-direction: column;
+            background-color: grey;
+            border-radius: .5rem;
+            text-align: center;
+            margin: 1rem;
+
+            .titreInfo {
+                font-size: 1.2rem;
+                color: #263238;
+                font-weight: bold
+            }
+
+            .dataInfo {
+                font-size: .8rem;
+                font-weight: bold
+            }
+
+
+        }
+    }
+
+    #ensembleDashbord {
+        margin-top: 1rem;
+        padding: 1rem;
+        border-radius: 1rem;
+
+        #cardUserTot {
+            border-radius: 1rem;
+
+            #userTot {
+                border: solid grey;
+                border-radius: 1rem;
+
+                h6 {
+                    font-weight: bold
+                }
+
+                .nb {
+                    font-size: 2rem;
+                    font-weight: bold
+                }
+            }
+        }
+
+        #cardUserTot:hover {
+            color: red;
+        }
+
+        #cardActifTot {
+            border-radius: 1rem;
+
+            #userActifTot {
+                border: solid grey;
+                border-radius: 1rem;
+
+                h6 {
+                    font-weight: bold
+                }
+
+                .nb {
+                    font-size: 2rem;
+                    font-weight: bold
+                }
+            }
+        }
+
+        #cardActifTot:hover {
+            color: red;
+        }
+
+        #cardTrajetTot {
+            border-radius: 1rem;
+
+            #trajetTot {
+                border: solid grey;
+                border-radius: 1rem;
+
+                h6 {
+                    font-weight: bold
+                }
+
+                .nb {
+                    font-size: 2rem;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        #cardTrajetTot:hover {
+            color: red;
+        }
+
+        #cardGraphStat {
+            border-radius: 1rem;
+
+            #GraphStat {
+                border: solid grey;
+                border-radius: 1rem;
+
+                h6 {
+                    font-weight: bold
+                }
+            }
+        }
+
+        #cardAVenir {
+            border-radius: 1rem;
+
+            #aVenir {
+                border: solid grey;
+                border-radius: 1rem;
+
+                h6 {
+                    font-weight: bold
+                }
+            }
+        }
+
+        #cardLastTrajet {
+            border-radius: 1rem;
+
+            #lastTrajet {
+                border: solid grey;
+                border-radius: 1rem;
+                padding: 1rem;
+                font-weight: bold
+            }
+
+            #cardTrajet {
+
+                h6 {
+                    font-weight: bold
+                }
+            }
+
+            #cardTrajet:hover {
+                color: red;
+                border-radius: 1rem;
+            }
+        }
+    }
+
+    #blockLastUser {
+        background-color: grey;
+        border: solid black;
+        border-radius: 1rem;
+
+        #lastUser {
+            border: solid #263238;
+            border-radius: 1rem;
+            font-weight: bold;
+            padding: .5rem;
+        }
+
+        #dataUser {
+            padding: .5rem;
+            display: flex;
+            margin: 0.5rem;
+            border: solid;
+            border-radius: 1rem;
+            flex-direction: column;
+            align-items: center;
+
+            #userPseudo {
+                margin: 0;
+                font-weight: bold;
+
+            }
+
+            img {
+                width: 3rem;
+                height: auto;
+            }
+        }
+    }
+
+
 }
