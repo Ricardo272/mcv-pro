@@ -2,7 +2,11 @@
   color: red;
 }
 
+#dashbord {
+  background-image: url("../image/background/ovan.jpg");
+}
 #dashbord #titreDashbord {
+  background-color: rgba(255, 228, 196, 0.611);
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
@@ -10,8 +14,12 @@
   padding: 0.5rem;
   border-radius: 1rem;
   font-weight: bold;
+  color: rgb(57, 57, 57);
+  border: solid grey;
 }
 #dashbord #dateDuJour {
+  background-color: rgba(255, 228, 196, 0.611);
+  color: rgb(57, 57, 57);
   font-size: 2rem;
   width: -moz-fit-content;
   width: fit-content;
@@ -19,8 +27,10 @@
   border-radius: 1rem;
   margin: 0.5rem;
   font-weight: bold;
+  border: solid grey;
 }
 #dashbord #sideNav {
+  background-image: Radial-gradient(rgb(48, 48, 144), rgba(255, 228, 196, 0.611));
   margin: 0;
   padding: 1rem;
   border-radius: 1rem;
@@ -58,14 +68,18 @@
   text-transform: capitalize;
 }
 #dashbord #ensembleDashbord {
+  background-color: rgba(38, 50, 56, 0.5803921569);
   margin-top: 1rem;
   padding: 1rem;
   border-radius: 1rem;
+  border: solid rgba(255, 228, 196, 0.611);
 }
 #dashbord #ensembleDashbord #cardUserTot {
+  background-image: Radial-gradient(rgb(48, 48, 144), rgba(255, 228, 196, 0.611));
   border-radius: 1rem;
 }
 #dashbord #ensembleDashbord #cardUserTot #userTot {
+  color: rgb(57, 57, 57);
   border: solid grey;
   border-radius: 1rem;
 }
@@ -90,6 +104,8 @@
   font-weight: bold;
 }
 #dashbord #ensembleDashbord #cardActifTot {
+  color: rgb(57, 57, 57);
+  background-image: Radial-gradient(rgb(48, 48, 144), rgba(255, 228, 196, 0.611));
   border-radius: 1rem;
 }
 #dashbord #ensembleDashbord #cardActifTot #userActifTot {
@@ -113,6 +129,8 @@
   display: none;
 }
 #dashbord #ensembleDashbord #cardTrajetTot {
+  color: rgb(57, 57, 57);
+  background-image: Radial-gradient(rgb(48, 48, 144), rgba(255, 228, 196, 0.611));
   border-radius: 1rem;
 }
 #dashbord #ensembleDashbord #cardTrajetTot #trajetTot {
@@ -136,6 +154,7 @@
   display: none;
 }
 #dashbord #ensembleDashbord #cardGraphStat {
+  background-color: rgb(0, 0, 0);
   border-radius: 1rem;
 }
 #dashbord #ensembleDashbord #cardGraphStat #GraphStat {
@@ -159,6 +178,7 @@
   font-weight: bold;
 }
 #dashbord #ensembleDashbord #cardLastTrajet {
+  background-color: rgba(255, 228, 196, 0.611);
   border-radius: 1rem;
 }
 #dashbord #ensembleDashbord #cardLastTrajet #lastTrajet {
@@ -178,7 +198,7 @@
   border-radius: 1rem;
 }
 #dashbord #blockLastUser {
-  background-color: grey;
+  background-image: Radial-gradient(rgb(48, 48, 144), rgba(255, 228, 196, 0.611));
   border: solid black;
   border-radius: 1rem;
 }

@@ -14,19 +14,19 @@
 
 <body class="grey darken-3 white-text " id="dashbord">
 
-    <h2 class="black" id="titreDashbord">DASHBOARD</h2>
+    <h2 id="titreDashbord">DASHBOARD</h2>
 
-    <h3 class="valign-wrapper black" id="dateDuJour">
+    <h3 class="valign-wrapper " id="dateDuJour">
         <i class="large material-icons">access_time</i>
         <?= $dateDuJour; ?>
     </h3>
 
 
-    <div class="container blue-grey darken-4" id="ensembleDashbord">
+    <div class="container " id="ensembleDashbord">
 
         <div class="row">
 
-            <ul class="col s12 m4 l2 black" id="sideNav">
+            <ul class="col s12 m4 l2 " id="sideNav">
 
                 <li>
                     <div class="user-view ">
@@ -91,7 +91,7 @@
 
                     <div class="col s4">
                         <div class="card" id="cardUserTot">
-                            <div id="userTot" class="card-content hoverable black">
+                            <div id="userTot" class="card-content hoverable ">
                                 <h6>Nombre d'utilisateur(s) totaux</h6>
                                 <?php
                                 $totalUser = User::countUser($_SESSION["user"]["ID_entreprise"]);
@@ -103,7 +103,7 @@
 
                     <div class="col s4">
                         <div class="card" id="cardActifTot">
-                            <div id="userActifTot" class="card-content hoverable black">
+                            <div id="userActifTot" class="card-content hoverable ">
                                 <h6>Nombre d'utilisateur(s) actif totaux</h6>
                                 <?php
                                 $totalUserActif = User::countUserActif($_SESSION["user"]["ID_entreprise"]);
@@ -116,7 +116,7 @@
 
                     <div class="col s4">
                         <div class="card" id="cardTrajetTot">
-                            <div id="trajetTot" class="card-content hoverable black">
+                            <div id="trajetTot" class="card-content hoverable ">
                                 <h6>Nombre de trajets totaux <br><br></h6>
                                 <?php
                                 $totalTrajet = User::countAllTrajet($_SESSION["user"]["ID_entreprise"]);
@@ -143,7 +143,7 @@
 
                     <div class="col s6 ">
                         <div class="card" id="cardGraphStat">
-                            <div class="card-content z-depth-5 black" id="GraphStat">
+                            <div class="card-content z-depth-5 " id="GraphStat">
                                 <h6>Stats des moyens de transport </h6>
 
                                 <div><canvas id="graph"></canvas></div>
@@ -178,7 +178,7 @@
 
                 <div class="card-content" id="cardLastTrajet">
 
-                    <h6 class="center-align z-depth-5 black" id="lastTrajet">Les 5 derniers trajets enregistrés</h6>
+                    <h6 class="center-align z-depth-5 " id="lastTrajet">Les 5 derniers trajets enregistrés</h6>
                     <?php
                     $lastTrajets = User::lastFiveTrajets($_SESSION["user"]["ID_entreprise"]);
                     foreach ($lastTrajets as $trajet) {
@@ -195,12 +195,12 @@
             </div>
 
             <div id="blockLastUser" class="col s12 m4 l2">
-                <h6 id="lastUser" class="center-align z-depth-5 black">Les 5 derniers utilisateurs</h6>
+                <h6 id="lastUser" class="center-align z-depth-5 ">Les 5 derniers utilisateurs</h6>
                 <?php
                 $lastUsers = User::lastFiveUser($_SESSION["user"]["ID_entreprise"]);
 
                 foreach ($lastUsers as $user) {
-                    echo "<div id='dataUser' class='user-card black'>";
+                    echo "<div id='dataUser' class='user-card '>";
                     echo "<p id='userPseudo' >" . $user['Pseudo'] . "</p>";
                     echo "<img class='circle responsive-img'
                                 src='../assets/image/image-par-defaut/img-profil-defaut.png'>";

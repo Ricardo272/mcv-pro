@@ -5,26 +5,36 @@
 }
 
 #dashbord {
+    background-image: url("../image/background/ovan.jpg");
+
     #titreDashbord {
+        background-color: rgba(255, 228, 196, 0.611);
         width: fit-content;
         margin: 0 auto;
         margin-top: .5rem;
         padding: .5rem;
         border-radius: 1rem;
         font-weight: bold;
+        color: rgb(57, 57, 57);
+        border: solid grey;
     }
 
     #dateDuJour {
+        background-color: rgba(255, 228, 196, 0.611);
+        color: rgb(57, 57, 57);
         font-size: 2rem;
         width: fit-content;
         padding: .5rem;
         border-radius: 1rem;
         margin: .5rem;
         font-weight: bold;
+        border: solid grey;
+
 
     }
 
     #sideNav {
+        background-image: Radial-gradient(rgb(48, 48, 144), rgba(255, 228, 196, 0.611));
         margin: 0;
         padding: 1rem;
         border-radius: 1rem;
@@ -71,14 +81,19 @@
     }
 
     #ensembleDashbord {
+        background-color: #26323894;
         margin-top: 1rem;
         padding: 1rem;
         border-radius: 1rem;
+        border: solid rgba(255, 228, 196, 0.611);
+
 
         #cardUserTot {
+            background-image: Radial-gradient(rgb(48, 48, 144), rgba(255, 228, 196, 0.611));
             border-radius: 1rem;
 
             #userTot {
+                color: rgb(57, 57, 57);
                 border: solid grey;
                 border-radius: 1rem;
 
@@ -99,6 +114,8 @@
         }
 
         #cardUserTot:hover {
+            color: red;
+
             h6 {
                 display: none;
             }
@@ -107,10 +124,12 @@
                 font-weight: bold
             }
 
-            color: red;
+
         }
 
         #cardActifTot {
+            color: rgb(57, 57, 57);
+            background-image: Radial-gradient(rgb(48, 48, 144), rgba(255, 228, 196, 0.611));
             border-radius: 1rem;
 
             #userActifTot {
@@ -141,6 +160,8 @@
         }
 
         #cardTrajetTot {
+            color: rgb(57, 57, 57);
+            background-image: Radial-gradient(rgb(48, 48, 144), rgba(255, 228, 196, 0.611));
             border-radius: 1rem;
 
             #trajetTot {
@@ -173,6 +194,7 @@
         }
 
         #cardGraphStat {
+            background-color: rgb(0, 0, 0);
             border-radius: 1rem;
 
             #GraphStat {
@@ -203,6 +225,7 @@
         }
 
         #cardLastTrajet {
+            background-color: rgba(255, 228, 196, 0.611);
             border-radius: 1rem;
 
             #lastTrajet {
@@ -228,7 +251,7 @@
     }
 
     #blockLastUser {
-        background-color: grey;
+        background-image: Radial-gradient(rgb(48, 48, 144), rgba(255, 228, 196, 0.611));
         border: solid black;
         border-radius: 1rem;
 
