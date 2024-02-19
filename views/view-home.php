@@ -119,7 +119,7 @@
                             <div id="trajetTot" class="card-content hoverable ">
                                 <h6>Nombre de trajets totaux <br><br></h6>
                                 <?php
-                                $totalTrajet = User::countAllTrajet($_SESSION["user"]["ID_entreprise"]);
+                                $totalTrajet = json_decode(User::countAllTrajet($_SESSION["user"]["ID_entreprise"]), true);
                                 echo "<p class='nb'><i class='material-icons'>my_location</i>$totalTrajet</p>";
                                 ?>
                             </div>
@@ -180,7 +180,7 @@
 
                     <h6 class="center-align z-depth-5 " id="lastTrajet">Les 5 derniers trajets enregistrés</h6>
                     <?php
-                    $lastTrajets = User::lastFiveTrajets($_SESSION["user"]["ID_entreprise"]);
+                    $lastTrajets = json_decode(User::lastFiveTrajets($_SESSION["user"]["ID_entreprise"]), true);
                     foreach ($lastTrajets as $trajet) {
                         echo "<div class='col s4 center-align hoverable' id='cardTrajet'>";
                         echo "<h6>Date du trajet</h6>" . $trajet['Date_du_trajet'];
@@ -197,14 +197,14 @@
             <div id="blockLastUser" class="col s12 m4 l2">
                 <h6 id="lastUser" class="center-align z-depth-5 ">Les 5 derniers utilisateurs</h6>
                 <?php
-                $lastUsers = User::lastFiveUser($_SESSION["user"]["ID_entreprise"]);
 
+                $lastUsers = json_decode(User::lastFiveUser($_SESSION["user"]["ID_entreprise"]), true);
                 foreach ($lastUsers as $user) {
                     echo "<div id='dataUser' class='user-card '>";
                     echo "<p id='userPseudo' >" . $user['Pseudo'] . "</p>";
-                    echo "<img class='circle responsive-img'
-                                src='../assets/image/image-par-defaut/img-profil-defaut.png'>";
+                    echo "<img class='circle responsive-img' src='http://MVC.test/assets/image/image-upload/" . $user['Photo_de_profil'] . "'>";
                     echo "</div>";
+
                 }
                 ?>
             </div>

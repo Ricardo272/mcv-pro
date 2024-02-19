@@ -107,9 +107,9 @@ class User
 
             // Récupération du résultat
             $result = $query->fetch(PDO::FETCH_ASSOC);
-
+            $json_result = json_encode($result['total_trajets']);
             // Retourner le nombre total de trajets
-            return $result['total_trajets'];
+            return $json_result;
         } catch (PDOException $e) {
             // Gestion des erreurs de connexion à la base de données
             echo "Erreur : " . $e->getMessage();
@@ -131,15 +131,14 @@ class User
             $query = $db->prepare($sql);
             $query->bindValue(':idEntreprise', $idEntreprise, PDO::PARAM_INT);
 
-
             // Exécution de la requête
             $query->execute();
 
             // Récupération des résultats
             $result = $query->fetchAll(PDO::FETCH_ASSOC);
-
+            $json_result = json_encode($result);
             // Retourner les résultats
-            return $result;
+            return $json_result;
 
         } catch (PDOException $e) {
             // Gestion des erreurs de connexion à la base de données
@@ -166,9 +165,10 @@ class User
 
             // Récupération des résultats
             $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            $json_result = json_encode($result);
 
             // Retourner les résultats
-            return $result;
+            return $json_result;
 
         } catch (PDOException $e) {
             // Gestion des erreurs de connexion à la base de données
