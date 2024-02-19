@@ -34,11 +34,14 @@
   margin: 0;
   padding: 1rem;
   border-radius: 1rem;
-  border: solid grey;
+  border: solid black;
   line-height: 0.5rem;
 }
+#dashbord #sideNav li .user-view a img {
+  border: dotted #263238;
+}
 #dashbord #sideNav .deconnexion {
-  color: rgb(54, 162, 235);
+  color: black;
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -49,6 +52,7 @@
   color: red;
 }
 #dashbord #sideNav .contours {
+  border: solid #263238;
   display: flex;
   flex-direction: column;
   background-color: grey;
@@ -61,6 +65,7 @@
   color: #263238;
   font-weight: bold;
   text-transform: capitalize;
+  line-height: 0.9rem;
 }
 #dashbord #sideNav .contours .dataInfo {
   font-size: 0.8rem;
@@ -94,14 +99,8 @@
 #dashbord #ensembleDashbord #cardUserTot #userTot .nb i {
   margin-right: 0.5rem;
 }
-#dashbord #ensembleDashbord #cardUserTot:hover {
-  color: red;
-}
 #dashbord #ensembleDashbord #cardUserTot:hover h6 {
   display: none;
-}
-#dashbord #ensembleDashbord #cardUserTot:hover .nb {
-  font-weight: bold;
 }
 #dashbord #ensembleDashbord #cardActifTot {
   color: rgb(57, 57, 57);
@@ -121,9 +120,6 @@
 }
 #dashbord #ensembleDashbord #cardActifTot #userActifTot .nb i {
   margin-right: 0.5rem;
-}
-#dashbord #ensembleDashbord #cardActifTot:hover {
-  color: red;
 }
 #dashbord #ensembleDashbord #cardActifTot:hover h6 {
   display: none;
@@ -146,9 +142,6 @@
 }
 #dashbord #ensembleDashbord #cardTrajetTot #trajetTot .nb i {
   margin-right: 0.5rem;
-}
-#dashbord #ensembleDashbord #cardTrajetTot:hover {
-  color: red;
 }
 #dashbord #ensembleDashbord #cardTrajetTot:hover h6 {
   display: none;
@@ -194,7 +187,7 @@
   font-weight: bold;
 }
 #dashbord #ensembleDashbord #cardLastTrajet #cardTrajet:hover {
-  color: red;
+  color: #263238;
   border-radius: 1rem;
 }
 #dashbord #blockLastUser {
@@ -209,6 +202,8 @@
   padding: 0.5rem;
 }
 #dashbord #blockLastUser #dataUser {
+  background-color: grey;
+  color: #263238;
   padding: 0.5rem;
   display: flex;
   margin: 0.5rem;
@@ -225,4 +220,5 @@
 #dashbord #blockLastUser #dataUser img {
   width: 3rem;
   height: auto;
+  border: dotted;
 }/*# sourceMappingURL=style.css.map */
