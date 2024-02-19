@@ -94,7 +94,7 @@
                             <div id="userTot" class="card-content hoverable ">
                                 <h6>Nombre d'utilisateur(s) totaux</h6>
                                 <?php
-                                $totalUser = User::countUser($_SESSION["user"]["ID_entreprise"]);
+                                $totalUser = json_decode(User::countAllEntrepriseJson($_SESSION["user"]["ID_entreprise"]), true);
                                 echo "<p class='nb'><i class='material-icons'>person</i>$totalUser</p>";
                                 ?>
                             </div>
@@ -106,7 +106,7 @@
                             <div id="userActifTot" class="card-content hoverable ">
                                 <h6>Nombre d'utilisateur(s) actif totaux</h6>
                                 <?php
-                                $totalUserActif = User::countUserActif($_SESSION["user"]["ID_entreprise"]);
+                                $totalUserActif = json_decode(User::countUserActif($_SESSION["user"]["ID_entreprise"]), true);
                                 echo "<p class='nb'> <i class='material-icons'> directions_bike</i>$totalUserActif</p>";
                                 ?>
                             </div>
