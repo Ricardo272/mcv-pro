@@ -41,7 +41,7 @@ class User
     //     }
     // }
 
-    public static function countAllEntrepriseJson($idEntreprise)
+    public static function countUser($idEntreprise)
     {
         try {
             $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
@@ -177,4 +177,28 @@ class User
         }
     }
 
+    public static function allUser($idEntreprise)
+    {
+        try {
+            $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
+
+            $sql = "SELECT * FROM `utilisateur` WHERE `ID_entreprise` = :idEntreprise ";
+
+            $query = $db->prepare($sql);
+
+            $query->bindValue(':idEntreprise', $idEntreprise, PDO::PARAM_INT);
+
+            $query->execute();
+
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+
+            $json_result = json_encode($result);
+
+            return $json_result;
+        } catch (PDOException $e) {
+            // Gestion des erreurs de connexion à la base de données
+            echo "Erreur : " . $e->getMessage();
+            die();
+        }
+    }
 }

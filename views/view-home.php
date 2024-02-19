@@ -16,12 +16,16 @@
 
     <h2 id="titreDashbord">DASHBOARD</h2>
 
-    <h3 class="valign-wrapper " id="dateDuJour">
-        <i class="large material-icons">access_time</i>
-        <?= $dateDuJour; ?>
-    </h3>
+    <div class="row">
 
-
+        <h3 class="valign-wrapper " id="dateDuJour">
+            <i class="large material-icons">access_time</i>
+            <?= $dateDuJour; ?>
+        </h3>
+        <h3>
+            <a href=" ../controllers/controller-allUserPage.php">All User Page</a>
+        </h3>
+    </div>
     <div class="container " id="ensembleDashbord">
 
         <div class="row">
@@ -94,7 +98,7 @@
                             <div id="userTot" class="card-content hoverable ">
                                 <h6>Nombre d'utilisateur(s) totaux</h6>
                                 <?php
-                                $totalUser = json_decode(User::countAllEntrepriseJson($_SESSION["user"]["ID_entreprise"]), true);
+                                $totalUser = json_decode(User::countUser($_SESSION["user"]["ID_entreprise"]), true);
                                 echo "<p class='nb'><i class='material-icons'>person</i>$totalUser</p>";
                                 ?>
                             </div>
