@@ -40,6 +40,14 @@
                                 <span class=" lever"></span>
                                 On </label>
                         </div>
+                        <form action="">
+                            <a class="waves-effect waves-light btn-large"><i
+                                    class="material-icons left">cloud</i>Activer</a>
+                        </form>
+                        <form action="">
+                            <a class="waves-effect waves-light btn-large"><i
+                                    class="material-icons right">cloud</i>Désactiver</a>
+                        </form>
                     </li>
                 </ul>
             <?php }
