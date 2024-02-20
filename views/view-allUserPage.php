@@ -40,14 +40,21 @@
                                 <span class=" lever"></span>
                                 On </label>
                         </div>
-                        <form action="">
-                            <a class="waves-effect waves-light btn-large"><i
-                                    class="material-icons left">cloud</i>Activer</a>
+
+                        <form method="POST" action="../controllers/controller-allUserPage.php">
+                            <input type="hidden" name="activ" value="<?= $user['ID_utilisateur'] ?>">
+                            <button class="waves-effect waves-light btn-small" type="submit">
+                                Activer
+                            </button>
                         </form>
-                        <form action="">
-                            <a class="waves-effect waves-light btn-large"><i
-                                    class="material-icons right">cloud</i>Désactiver</a>
+
+                        <form method="POST" action="../controllers/controller-allUserPage.php"> <input type="hidden"
+                                name="desactiv" value="<?= $user['ID_utilisateur'] ?>">
+                            <button class="waves-effect waves-light btn-small" type="submit">
+                                Désactiver
+                            </button>
                         </form>
+
                     </li>
                 </ul>
             <?php }

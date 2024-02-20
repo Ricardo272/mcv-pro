@@ -2,7 +2,7 @@
 
 // Démarrer la session
 session_start();
-
+var_dump($_POST);
 // Config
 require_once "../config.php";
 
@@ -14,8 +14,14 @@ require_once "../models/Trajet.php";
 if (isset($_SESSION['user'])) {
     $dateDuJour = date('d F Y');
 
-    User::unvalidateUser(1);
-
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        if (isset($_POST['activ'])) {
+            User::validateUser($_POST['activ']);
+        }
+        if (isset($_POST['desactiv'])) {
+            User::unvalidateUser($_POST['desactiv']);
+        }
+    }
 
     // Appeler la vue
     include_once('../views/view-allUserPage.php');

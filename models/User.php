@@ -232,15 +232,14 @@ class User
     }
 
     /**
-     * Methode permettant de valider un utilisateur
+     * Methode permettant de désactiver un utilisateur
      * 
      * @param int $idUser Identifiant de l'utilisateur
      * @return bool 
      * 
      */
-    public static function unvalidateUser(
-        int $idUser
-    ): bool {
+    public static function unvalidateUser(int $idUser): bool
+    {
         try {
             $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
 
