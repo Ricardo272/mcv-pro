@@ -14,8 +14,7 @@ require_once "../models/Trajet.php";
 if (isset($_SESSION['user'])) {
     $dateDuJour = date('d F Y');
 
-
-
+    User::unvalidateUser(1);
 
 
     // Appeler la vue

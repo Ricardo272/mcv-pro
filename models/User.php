@@ -201,4 +201,65 @@ class User
             die();
         }
     }
+    /**
+     * Methode permettant de valider un utilisateur
+     * 
+     * @param int $idUser Identifiant de l'utilisateur
+     * @return bool 
+     * 
+     */
+    public static function validateUser(
+        int $idUser
+    ): bool {
+        try {
+            $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
+
+            $sql = "UPDATE `utilisateur` SET `Utilisateur_valide`=1 WHERE `ID_utilisateur` = :id_utilisateur";
+
+            $query = $db->prepare($sql);
+
+            $query->bindValue(':id_utilisateur', $idUser, PDO::PARAM_INT);
+
+            $query->execute();
+
+            return true;
+
+        } catch (PDOException $e) {
+            // Gestion des erreurs de connexion à la base de données
+            echo "Erreur : " . $e->getMessage();
+            die();
+        }
+    }
+
+    /**
+     * Methode permettant de valider un utilisateur
+     * 
+     * @param int $idUser Identifiant de l'utilisateur
+     * @return bool 
+     * 
+     */
+    public static function unvalidateUser(
+        int $idUser
+    ): bool {
+        try {
+            $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
+
+            $sql = "UPDATE `utilisateur` SET `Utilisateur_valide` =0 WHERE `ID_utilisateur` = :id_utilisateur";
+
+            $query = $db->prepare($sql);
+
+            $query->bindValue(':id_utilisateur', $idUser, PDO::PARAM_INT);
+
+            $query->execute();
+
+
+            return true;
+
+        } catch (PDOException $e) {
+            // Gestion des erreurs de connexion à la base de données
+            echo "Erreur : " . $e->getMessage();
+            die();
+        }
+    }
+
 }

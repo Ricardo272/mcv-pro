@@ -14,20 +14,37 @@
 <body id="allUserPage">
     <h1>User Page </h1>
 
-    <div class="container">
+    <div class="container" id="ensembleUser">
         <div class="row">
+
             <?php
 
             $allUserData = json_decode(User::allUser($_SESSION["user"]["ID_entreprise"]), true);
             foreach ($allUserData as $user) {
-                echo "<div class='col s12 m6 l3' id='loopDataUser' class='user-card '>";
-                echo "<p id='userPseudo' >" . $user['Pseudo'] . "</p>";
-                echo "<img class='circle responsive-img' src='http://MVC.test/assets/image/image-upload/" . $user['Photo_de_profil'] . "'>";
-                echo "  <p id='userEmail'>" . $user['Email'] . "</p>";
-                echo "</div>";
-
-            }
+                ?>
+                <ul class="collection">
+                    <li class="collection-item avatar">
+                        <img src="http://MVC.test/assets/image/image-upload/<?= $user["Photo_de_profil"] ?>"
+                            alt="image utilisateur" class="circle responsive-img">
+                        <span id="userPseudo">
+                            <?= $user["Pseudo"] ?>
+                        </span>
+                        <p id="userEmail">
+                            <?= $user["Email"] ?>
+                            <br>
+                            <?= $user["Date_de_naissance"] ?>
+                        </p>
+                        <div class="switch secondary-content">
+                            <label> Off
+                                <input type="checkbox" <?= $user["Utilisateur_valide"] == 1 ? "checked" : "" ?>>
+                                <span class=" lever"></span>
+                                On </label>
+                        </div>
+                    </li>
+                </ul>
+            <?php }
             ?>
+
 
         </div>
     </div>

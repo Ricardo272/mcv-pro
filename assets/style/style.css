@@ -221,4 +221,8 @@
   width: 3rem;
   height: auto;
   border: dotted;
+}
+
+#allUserPage {
+  background-image: url("../image/background/bric-wall.jpg");
 }/*# sourceMappingURL=style.css.map */
