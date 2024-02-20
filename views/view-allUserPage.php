@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -23,7 +23,7 @@
             foreach ($allUserData as $user) {
                 ?>
                 <ul class="collection">
-                    <li class="collection-item avatar">
+                    <li class="collection-item avatar ">
                         <img src="http://MVC.test/assets/image/image-upload/<?= $user["Photo_de_profil"] ?>"
                             alt="image utilisateur" class="circle responsive-img">
                         <span id="userPseudo">
@@ -36,34 +36,37 @@
                         </p>
                         <div class="switch secondary-content">
                             <label> Off
-                                <input type="checkbox" <?= $user["Utilisateur_valide"] == 1 ? "checked" : "" ?>>
+                                <input type="checkbox" data-user-id="<?= $user['ID_utilisateur'] ?>"
+                                    <?= $user["Utilisateur_valide"] == 1 ? "checked" : "" ?>>
                                 <span class=" lever"></span>
                                 On </label>
                         </div>
 
-                        <form method="POST" action="../controllers/controller-allUserPage.php">
-                            <input type="hidden" name="activ" value="<?= $user['ID_utilisateur'] ?>">
-                            <button class="waves-effect waves-light btn-small" type="submit">
-                                Activer
-                            </button>
-                        </form>
-
-                        <form method="POST" action="../controllers/controller-allUserPage.php"> <input type="hidden"
-                                name="desactiv" value="<?= $user['ID_utilisateur'] ?>">
-                            <button class="waves-effect waves-light btn-small" type="submit">
-                                Désactiver
-                            </button>
-                        </form>
-
                     </li>
                 </ul>
             <?php }
-            ?>
 
+            ?>
 
         </div>
     </div>
 
 </body>
+<script>
+    document.addEventListener('click', e => {
+        if (e.target.type == 'checkbox') {
+
+            if (e.target.checked == false) {
+
+                fetch(`controller-ajax.php?unvalidate=${e.target.dataset.userId}`)
+            }
+
+            else {
+                fetch(`controller-ajax.php?validate=${e.target.dataset.userId}`)
+
+            }
+        }
+    })
+</script>
 
 </html>
