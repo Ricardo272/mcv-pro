@@ -261,4 +261,29 @@ class User
         }
     }
 
+    /**
+     * Méthode permettant de recuperer les infos de l'utilisateur
+     * 
+     * @param int $idUser Identifiant de l'utilisateur 
+     * @return array 
+     * 
+     */
+    public static function allInfoUser(int $idUser): array
+    {
+        try {
+            $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
+            $sql = "SELECT * FROM `utilisateur` WHERE `ID_utilisateur` = :id_utilisateur ";
+            $query = $db->prepare($sql);
+            $query->bindValue(':id_utilisateur', $idUser, PDO::PARAM_INT);
+            // $query->bindValue(':id_entreprise', $idEntreprise, PDO::PARAM_INT);
+            $query->execute();
+            $result = $query->fetch(PDO::FETCH_ASSOC);
+            return $result;
+        } catch (PDOException $e) {
+            // Gestion des erreurs de connexion à la base de données
+            echo "Erreur : " . $e->getMessage();
+            die();
+        }
+    }
+
 }
