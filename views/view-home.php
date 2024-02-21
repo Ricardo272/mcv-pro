@@ -16,14 +16,17 @@
 
     <h2 id="titreDashbord">DASHBOARD</h2>
 
-    <div class="row">
+    <div class="container">
         <h3 class="valign-wrapper col s6" id="dateDuJour">
             <i class="large material-icons">access_time</i>
             <?= $dateDuJour; ?>
         </h3>
-        <h3>
-            <a class="col s6" href=" ../controllers/controller-allUserPage.php">All User Page</a>
+        <h3 id="pageAllUser">
+            <a class="col s6" href=" ../controllers/controller-allUserPage.php">
+                All User Page
+            </a>
         </h3>
+
     </div>
     <div class="container " id="ensembleDashbord">
 

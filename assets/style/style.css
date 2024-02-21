@@ -17,7 +17,19 @@
   color: rgb(57, 57, 57);
   border: solid grey;
 }
-#dashbord #dateDuJour {
+#dashbord .container #dateDuJour {
+  background-color: rgba(255, 228, 196, 0.611);
+  color: rgb(57, 57, 57);
+  font-size: 2rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  margin: 0.5rem;
+  font-weight: bold;
+  border: solid grey;
+}
+#dashbord .container #pageAllUser {
   background-color: rgba(255, 228, 196, 0.611);
   color: rgb(57, 57, 57);
   font-size: 2rem;
